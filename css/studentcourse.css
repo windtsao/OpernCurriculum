@@ -1,0 +1,100 @@
+@charset "utf-8";
+/* CSS Document */
+.studentCourse_container{
+	text-align:left;
+	padding:20px;
+}
+.courseHeader{
+	height:120px;
+}
+.courseHeader h1{
+	margin-bottom:20px;
+	color:#666;
+	font-weight:normal;
+}
+.courseNavContent{
+	
+}
+.courseContentItem{
+	width:25%;
+	text-align:center;
+	position:relative;
+
+}
+.courseContentItemPic h3{
+	font-size:16px;
+	margin:0;
+	font-weight:normal;
+	line-height:20px;
+	margin-top:-20px;
+	color:#fff;
+	background:#333;
+	z-index:99;
+	
+	
+	
+}
+.courseContentItemPic{
+	margin:0;
+	border:0px;
+	color:#fff;
+	
+	text-decoration:none;
+}
+.courseContentItemPic div{
+	background-image:url(../img/courses/astronomy.jpeg);
+	background-size:cover;
+	height:150px;
+	background-repeat:no-repeat;
+}
+.courseContentItemProgrss{
+	background-color:#888;
+	height:5px;
+	width:100%;
+	display:block;
+}
+.courseContentItemProgrss span{
+	background-color:#888;
+	height:5px;
+	background:#0C0;
+	width:20%;
+	display:block;
+}
+.courseEditPanel{
+	background:#333;
+	border-radius:5px;
+	top:5px;
+	right:5px;
+	position: absolute;
+	width:50px;
+	display:none;
+}
+.courseContentItem:hover > .courseEditPanel{
+	display:block;}
+.tooltipDiv{
+	width:180px;
+	height:170px;
+	padding:10px;
+	text-align:left;
+}
+.tooltipDiv > .descriptionDiv{
+	height:40px;
+	overflow:hidden;
+	padding-bottom:5px;
+}
+.tooltipDiv > .progressDiv{
+	padding-top:10px;
+	border-top:#333 1px solid;
+	height:50px;
+}
+.tooltipDiv > .progressDiv > .personalProgress1{
+	width:81px;
+	float:left;
+	margin-right:15px;
+
+}
+.tooltipDiv > .progressDiv > .groupProgress1{
+	width:81px;
+	float:left;
+
+}

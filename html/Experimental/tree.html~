@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="../css/basic.css" rel="stylesheet" />
+<link href="../css/index.css" rel="stylesheet" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<title>OpenCurriculum</title>
+</head>
+
+<body>
+    <div id="basic_container">
+        <div id="basic_topContainer">
+        	<center>
+            	<div class="basic_middleWidth" id="basic_top_mainContainer">
+                	<div id="basic_topLogoDiv">
+                    	<img src="../img/logo.png" height="30">
+                    </div>
+                    <div id="basic_topSearch">
+                    	<input type="text" value="Search" onFocus="if(this.value=='Search')this.value='';" onBlur="if(this.value=='')this.value='Search';" />
+                    </div>
+                    <div id="basic_topAccount">
+                    	
+                    </div>
+                </div>
+            </center>
+        </div>
+        <div id="basic_middleContainer">
+        	<center>
+         	<div id="basic_spaceOccupy" style="height:40px"></div>
+        	<div class="basic_middleWidth">
+           		<div  style="background-color:transparent;">
+                <div class="index_panel">
+               
+                    <div class="index_panel_right" >
+                    	<table>
+                        	<tr><td><input type="text" value="Username" onFocus="if(this.value=='Username')this.value='';" onBlur="if(this.value='')this.value='Username';" class="index_loginText"/></td></tr>
+                            <tr><td><input type="text" value="Password" onFocus="if(this.value=='Password')this.value='';" onBlur="if(this.value='')this.value='Password';" class="index_loginText"/></td></tr>
+                            <tr><td><a href="#" class="index_loginBtn">Register</a>&nbsp;&nbsp;<a href="#" class="index_loginBtn">Login</a></td></tr>
+                            <tr><td><a href="#" class="index_exploreBtn" >Explore</a></td></tr>
+                        </table>
+                    </div>
+                
+                </div>
+                
+                </div>
+                <div id="basic_generalBg">
+               <div id="basic_bg"><img src="../img/index_bg.png"/></div>
+               </div>
+            </div>
+            </center>
+        </div>
+    </div>
+    <div id="basic_bg"></div>
+</body>
+</html>

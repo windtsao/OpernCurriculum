@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="../plugin/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
+<link href="../css/basic.css" rel="stylesheet" />
+<link href="../css/teacherHome.css" rel="stylesheet" />
+<link href="../css/editGroup.css" rel="stylesheet" />
+<link href="../plugin/multiselect/css/multi-select.css" media="screen" rel="stylesheet" type="text/css">
+<script src="http://code.jquery.com/jquery.js"></script>
+<script type="text/javascript" src="../plugin/multiselect/js/jquery.multi-select.js"></script>
+
+
+<title>OpenCurriculum</title>
+</head>
+
+<body>
+<script>
+
+
+
+$(document).ready(function() {
+	$('#assignCourse').multiSelect({
+		selectableHeader: "<div >Unassigned</div>",
+  		selectionHeader: "<div >Assigned</div>"
+		});
+	
+ });
+</script>
+    <div id="basic_container">
+        <div id="basic_topContainer">
+        	<center>
+            	<div class="basic_middleWidth" id="basic_top_mainContainer">
+                	<div id="basic_topLogoDiv">
+                    	<a href="index.html"><img src="../img/logo.png" height="30"></a>
+                    </div>
+                    <div id="basic_topSearch">
+                    	<div class="SearchBox"><img src="../img/searchIcon.png" style="padding-top:3px; margin-left:-15px"/><input type="text" placeholder="Search"  style="border:0;
+	background-color:transparent;color:#457454; width:240px;"/></div>
+                    </div>
+                    <div id="basic_topAccount">
+                    <li style="padding-top:3px;">
+                    		<a href="SignOutSuccessful.html" class="signOut">Sign Out</a>
+                        </li>
+                    <li>
+                    		<a href="TeacherProfile.html"><img src="../img/profile.jpg" height="20"/></a>
+                        </li>
+                    <li style="padding-top:3px">
+                        	Teacher
+                        </li>
+                    	
+                        
+                        <li>
+                        </li>
+                    </div>
+                </div>
+            </center>
+        </div>
+        <div id="basic_middleContainer">
+        	<center>
+         	<div id="basic_spaceOccupy"></div>
+        	<div class="basic_middleWidth">
+           		<div class="basic_card">
+                <div class="teacherHome_statItem">
+                	<div class="teacherHome_statItem_left">
+                    	<li>
+                        	<img src="../img/icon_stat.png" height="25" width="25"/><div><a href="TeacherHome.html">Overview</a></div>
+                            
+                        </li>
+                        <li  class="teacherHome_statItem_left_selected">
+                        	<img src="../img/icon_group_hover.png" height="25" width="25"/><div><a href="TeacherGroup.html">Group</a></div>
+                            
+                        </li>
+                        <li>
+                        	<img src="../img/icon_content.png" height="25" width="25"/><div><a href="TeacherCourse.html">Course</a></div>
+                            
+                        </li>
+                        <li>
+                        	<img src="../img/icon_profile.png" height="25" width="25"/><div><a href="TeacherProfile.html">Profile</a></div>
+                            
+                        </li>
+                        
+                     
+                    </div>
+                    <div class="teacherHome_statItem_right" id="teacherHome_rateStat">
+                    	<div>
+                        	<div class="groupEdit_Container">
+                                <h1>Create Group 2</h1>
+                               	<h2>Group Basic</h2>
+                                <h3>Group Name</h3>
+                                <div class="groupEdit_entry"><input type="text" value="Class 203" placeholder="Group Name" class="input-xlarge"></div>
+                                 <h3  data-toggle="collapse" data-target="#groupDescription" class="accordion-toggle expand">Group Description</h3>
+                                <div class="groupEdit_entry  collapse" id="groupDescription">
+                                	<textarea  style="padding-top:10px;height:50px; width:80%;" placeholder="Group Description" >This is a group for A3 level students to join.</textarea>
+                               </div>
+                               <div><a href="EditGroupSuccessful.html" class="basic_darkGreenBtn">Update</a></div>
+                               <h2>Student Enrollment</h2>
+                                <h3>Send email to invite student</h3>
+                                <div  class="groupEdit_entry"><textarea  style="padding-top:10px;height:50px; width:80%;" placeholder="Enter email address. Seperated by ;"></textarea></div>
+                              <div style="margin-bottom:10px;"  class="groupEdit_entry"><a href="EditGroupSuccessful.html" class="basic_darkGreenBtn">Send</a></div>
+                               
+                      			<h3>Current student</h3>
+           						<div class="groupEdit_studentTable groupEdit_entry">
+                                    <table >
+                                    
+                                   
+                                    </table>
+                                </div>
+                                <div class="groupEdit_entry"><a href="EditGroupSuccessful.html" class="basic_darkGreenBtn">Delete selected students</a></div>
+                           		<h2>Course Enrollment</h2>
+                                <h3>Assign Course to this group</h3>
+                                <div class="groupEdit_entry" style="margin-bottom:10px;">
+                                <select multiple="multiple" id="assignCourse" name="">
+                                  <option value='elem_1'>Introduction to Earth</option>
+                                  <option value='elem_2'>Introduction to Space</option>
+                                  <option value='elem_3'>Sun Introduction</option>
+                                  <option value='elem_4'>Geology Disaster</option>
+  
+                                </select>
+                                
+                                </div>
+                                <div class="groupEdit_entry"><a href="EditGroupSuccessful.html" class="basic_darkGreenBtn">Assign</a></div>
+              					
+                               
+                                <!--
+                                <h3  class="expand">Course Size</h3>
+                                <div  class="groupEdit_entry  collapse" style="height:auto">
+                                	<select ><Option value="">20</Option></select>
+                                </div>
+                                --->
+                                
+                        	</div>
+
+						</div>
+                    </div>
+                	<div class="clear"></div>
+                </div>
+                
+                </div>
+       
+            </div>
+            <div id="basic_generalBg">
+               <div id="basic_bg"><img src="../img/bg.png"/></div>
+               </div>
+            </center>
+        </div>
+    </div>
+    <div id="basic_bg"></div>
+    <script src="../plugin/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+@charset "UTF-8";
+/* CSS Document */
+.contentContainer{
+	text-align:left;
+	padding:20px;
+	
+}
+.contentContainer > .title{
+	font-size:25px;
+	color:#666;
+	line-height:normal;
+	padding-top:20px;
+}
+.contentContainer > .views{
+	font-size:12px;
+	line-height:14px;
+	text-align:right;
+	font-weight:normal;
+	color:#aaa;
+	padding-bottom:10px;
+	
+}
+.contentContainer > .objective{
+	background-color:#eee;
+	border-radius:10px;
+	padding:10px;
+	color:#666;
+	font-size:14px;
+	line-height:20px;
+}
+.contentContainer > .share{
+	text-align:right;
+	margin-bottom:10px;
+	
+}
+.contentContainer > .content{
+	margin-top:10px;
+	color:#666;
+	font-size:14px;
+	line-height:18px;
+}
+.contentContainer > .control{
+	margin-top:10px;
+	color:#666;
+	width:100%;
+	padding-bottom:40px;
+}
+.contentContainer > .control > .previous{
+	width:30%;
+	float:left;
+}
+.contentContainer > .control > .next{
+	width:50%;
+	float:right;
+	text-align:right;
+}

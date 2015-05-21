@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<link href="../css/basic.css" rel="stylesheet" />
+<link href="../css/teacherHome.css" rel="stylesheet" />
+<link href="../css/teacherCourse.css" rel="stylesheet" />
+<link href="../css/studentcourse.css" rel="stylesheet" type="text/css">
+<link href="../css/progressBar.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../js/prototype/prototype.js"></script>
+
+	<!-- jsProgressBarHandler core -->
+<script type="text/javascript" src="../js/bramus/jsProgressBarHandler.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+
+<title>OpenCurriculum</title>
+</head>
+
+<body>
+<script LANGUAGE="javascript">
+　　<!--
+　　function openwin() { 
+window.open ("UserRegistration.html")
+　　}
+
+-->
+　　</script>
+    <div id="basic_container">
+        <div id="basic_topContainer">
+        	<center>
+            	<div class="basic_middleWidth" id="basic_top_mainContainer">
+                	<div id="basic_topLogoDiv">
+                    	<a href="index.html"><img src="../img/logo.png" height="30"></a>
+                    </div>
+                    <div id="basic_topSearch">
+                    	<div class="SearchBox"><img src="../img/searchIcon.png" style="padding-top:3px; margin-left:-15px"/><input type="text" placeholder="Search"  style="border:0;
+	background-color:transparent;color:#457454; width:240px;"/></div>
+                    </div>
+                    <div id="basic_topAccount">
+                    <li>
+                    <a href="SignOutSuccessful.html">Sign Out</a>
+                    <li style="padding-top:3px">
+                        	Teacher
+                        </li>
+                    <li>
+                    <a href="TeacherProfile.html"><img src="../img/profile.jpg" height="20"/></a>
+                    </li>
+                    </div>
+                </div>
+            </center>
+        </div>
+        <div id="basic_middleContainer">
+        	<center>
+         	<div id="basic_spaceOccupy"></div>
+        	<div class="basic_middleWidth">
+           		<div class="basic_card">
+                <div class="teacherHome_statItem">
+                	<div class="teacherHome_statItem_left">
+                    	<li>
+                        	<img src="../img/icon_stat.png" height="25" width="25"/><div><a href="TeacherHome.html">Overview</a></div>
+                            
+                        </li>
+                        <li>
+                        	<img src="../img/icon_group.png" height="25" width="25"/><div><a href="TeacherGroup.html">Group</a></div>
+                            
+                        </li>
+                        <li class="teacherHome_statItem_left_selected">
+                        	<img src="../img/icon_content_hover.png" height="25" width="25"/><div><a href="TeacherCourse.html">Course</a></div>
+                            
+                        </li>
+                        <li>
+                        	<img src="../img/icon_profile.png" height="25" width="25"/><div><a href="TeacherProfile.html">Profile</a></div>
+                            
+                        </li>
+                        
+                     
+                    </div>
+                    <div class="teacherHome_statItem_right" id="teacherHome_rateStat">
+                    	<div class="container">
+<div class="gridVert">
+<div class="subtitleDiv"><span class="subtitle">Group A3</span>
+
+</div>
+
+<div class="course"><cite><progress id='p' max='100' value='30'></progress><span>30%</span></cite><img class="imgCourse" src="../img/courses/geometry.jpg" title="Geometry"/></br><a class="courseLink" href="">Geometry</a></div>
+<div class="course"><cite><progress id='p' max='100' value='30'></progress><span>30%</span></cite><img class="imgCourse" src="../img/courses/arithmetic.png" title="Arithmetic"/></br><a class="courseLink" href="">Arithmetic</a></div>
+<div class="course"><cite><progress id='p' max='100' value='30'></progress><span>30%</span></cite><img class="imgCourse" src="../img/courses/Statistics.png"/></br><a class="courseLink" href="">Statistics</a></div>
+
+</div>
+<div class=bottomGroup>
+  <div class="gridVert">
+<div class="subtitleDiv"><span class="subtitle">Student List</span>
+
+</div>
+<div class="CourseTable">
+<table>
+	<tr>
+		<td width="80%" bgcolor="#FFFFFF" class="detail_left"><b>Student Username</b></td>
+		<td width="20%" bgcolor="#FFFFFF" class="detail_right"><b>Progress</b></td>
+	</tr>
+	<tr>
+		<td bgcolor="#FFFFFF" class="detail_left">Tony</td>
+		<td bgcolor="#FFFFFF" class="detail_right">30%</td>
+	</tr>
+	<tr>
+		<td bgcolor="#FFFFFF" class="detail_left">Mickey</td>
+		<td bgcolor="#FFFFFF" class="detail_right">70%</td>
+	</tr>
+    <tr>
+		<td bgcolor="#FFFFFF" class="detail_left">Mike</td>
+		<td bgcolor="#FFFFFF" class="detail_right">30%</td>
+	</tr>
+    <tr>
+		<td bgcolor="#FFFFFF" class="detail_left">Tom</td>
+		<td bgcolor="#FFFFFF" class="detail_right">50%</td>
+	</tr>
+	<tr>
+		<td bgcolor="#FFFFFF" class="detail_left">Carnegie</td>
+		<td bgcolor="#FFFFFF" class="detail_right">70%</td>
+	</tr>
+</table>
+    </div>
+</div>
+</div>
+</div>
+                    </div>
+                	<div class="clear"></div>
+                </div>
+                
+                </div>
+       
+            </div>
+            <div id="basic_generalBg">
+               <div id="basic_bg"><img src="../img/bg.png"/></div>
+               </div>
+            </center>
+        </div>
+    </div>
+    <div id="basic_bg"></div>
+</body>
+</html>

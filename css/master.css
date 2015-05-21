@@ -1,0 +1,37 @@
+h1{
+	color:#5abd02;
+	padding-top:40px;
+	font-size:18px;
+	text-align:left;
+	
+	
+}
+.profileForm{
+	
+	text-align:left;
+	padding:20px;
+	color:#666;
+	font-size:14px;
+	
+}
+.profileForm h3{
+	margin-bottom: 20px;
+color: #666;
+font-weight: normal
+
+}
+.profileForm li{
+	clear:both;
+	padding-top:20px;}
+.profileForm li div{
+	float:left;
+}
+p{
+	margin-top:20px;
+	margin-bottom:20px;}
+.profile_table td{
+	padding-top:10px;}
+.editable{
+	/*text-decoration:underline;*/
+	border-bottom: dashed 1px #0088cc;
+}

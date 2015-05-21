@@ -1,0 +1,103 @@
+@charset "UTF-8";
+/* CSS Document */
+.courseView_Overview{
+	margin-top:10px;
+	
+}
+.courseView_Pic{
+	width:30%;
+	float:left;
+	padding-right:5%;
+	
+}
+.courseView_General{
+	width:65%;
+	text-align:left;
+	float:left;
+	}
+.courseView_Detail{
+	margin-top:20px;
+	text-align:left;
+	border-top:solid #aaa 1px;
+	padding-top:20px;
+	
+}
+.courseView_General h1{
+	color:#74a983;
+	line-height:normal;
+	margin-top:0;
+}
+.courseView_Author{
+	color:#999;
+	font-size:12px;
+	font-weight:normal;
+	text-align:right;
+	
+	}
+.courseView_General p{
+	color:#666;
+	font-size:14px;
+	font-weight:normal;
+	margin-top:10px;
+	line-height:normal;
+}
+.courseView_Navigation{
+	color:#74a983;
+	font-size:14px;
+	font-weight:normal;
+	}
+.courseView_Navigation a{
+	color:#74a983;
+	font-size:14px;
+	font-weight:normal;
+	padding-right:5px;
+	padding-left:5px;
+	border-right:solid #74a983 1px;
+	}
+.courseView_Chapter{
+	margin-top:20px;
+	cursor:pointer;
+	margin-bottom:40px;
+	display:block;
+}
+.courseView_ChapterIcon{
+	width:110px;
+	padding-right:5%;
+	float:left;
+}
+.courseView_ChapterIcon div{
+	margin-top:-95px;
+	width:110px;
+	text-align:center;
+	color:#fff;
+	padding-left:10px;
+	text-shadow: rgba(0, 0, 0, 0.6) 0px -1px 0px;
+	font-size:12px;
+	font-weight:bold;
+}
+.courseView_ChapterIcon div span{
+	display:block;
+	font-size:40px;
+	padding-top:20px;
+	}
+.courseView_ChapterContent{
+	width:75%;
+	
+	float:left;
+}
+.courseView_ChapterContent h1{
+	color:#666;
+	font-size:16px;
+	line-height:16px;
+	margin-bottom:5px;
+	margin-top:0;
+	}
+.courseView_ChapterContent p{
+	color:#999;
+	font-size:14px;
+	font-weight:normal;
+	max-height:60px;
+	overflow:hidden;
+	line-height:14px;
+	margin-bottom:0;
+	}

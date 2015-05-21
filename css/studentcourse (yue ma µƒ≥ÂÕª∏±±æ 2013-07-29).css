@@ -1,0 +1,28 @@
+@charset "utf-8";
+/* CSS Document */
+.studentCourse_container{
+	text-align:left;
+	padding:20px;
+}
+.courseHeader{
+	height:120px;
+}
+.courseHeader h1{
+	margin-bottom:20px;
+}
+.courseNavContent{
+	
+}
+.courseContentItem{
+	width:20%;
+
+}
+.courseContentItem h3{
+	font-size:16px;
+	margin:0;
+	line-height:20px;
+	margin-top:-20px;
+	color:#fff;
+	background:#333;
+	opacity:0.7;
+}

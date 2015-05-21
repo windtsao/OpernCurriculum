@@ -1,0 +1,46 @@
+@charset "UTF-8";
+/* CSS Document */
+.searchContainer{
+	padding:20px;
+	text-align:left;
+}
+.searchContainer h1{
+	margin-bottom:20px;
+	color:#666;
+}
+.searchResult td img{
+	max-width:100%;
+	height:100px;
+}
+.searchResult h4{
+	margin:0;
+	line-height:20px;
+}
+.searchResult p{
+	line-height:16px;
+	font-size:14px;
+	color:#888;
+}
+.searchDescription{
+	height:60px;
+	overflow-y:hidden;
+}
+
+.searchTag div{
+	border-radius:10px;
+	height:20px;
+	width:50px;
+	text-align:center;
+	color:#fff;
+	font-size:12px;
+	padding:1%;
+}
+.conceptTag{
+	background:#FF0080;
+	}
+.courseTag{
+	background:#39F;
+	}
+.contentTag{
+	background:#090;
+	}

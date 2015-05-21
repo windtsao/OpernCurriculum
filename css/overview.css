@@ -1,0 +1,64 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.overviewContainer{
+	padding:20px;
+	text-align:left;
+}
+.overviewHeader{
+	height:120px;
+	color:#666;
+}
+.overviewContainer h1{
+	color:#666;
+	font-weight:normal;
+	}
+/*.overviewContainer h3{
+	
+	font-size:18px;
+	line-height:15px;
+	font-weight:normal;
+	color:#666;
+	background-color:#eee;
+	border-radius:10px 10px 0 0;
+	height:22px;
+	padding-top:5px;
+	padding-left:10px;
+	margin-top:10px;
+	}*/
+.overviewBehindItem{
+	width:20%;
+	
+	}
+.thumbnail div{
+	width:100%;
+	height:180px;
+	background-size:cover;
+	}
+
+.studentThumbnail{
+	background-image:url(../img/profile.jpg);
+	
+	}
+.courseThumbnail{
+	background-image:url(../img/courses/astronomy.jpeg);
+	}
+
+.thumbnail span{
+	line-height:20px;
+	margin-top:-20px;
+	background:#333;
+	color:#fff;
+	display:block;
+	text-align:center;
+}
+.thumbnails p{
+	text-align:center;
+	font-size:12px;
+	padding-top:5px;
+	margin:0px;}
+	
+.thumbnails li{
+	width:200px;
+	height:200px;
+	}

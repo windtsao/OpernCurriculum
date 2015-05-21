@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="../plugin/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
+<link href="../css/basic.css" rel="stylesheet" />
+<link href="../css/teacherHome.css" rel="stylesheet" />
+<link href="../css/courseView.css" rel="stylesheet" />
+<link href="../css/progressbar_courseView.css" rel="stylesheet" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<script>
+</script>
+<title>OpenCurriculum</title>
+</head>
+
+<body>
+    <div id="basic_container">
+        <div id="basic_topContainer">
+        	<center>
+            	<div class="basic_middleWidth" id="basic_top_mainContainer">
+                	<div id="basic_topLogoDiv">
+                    	<a href="index.html"><img src="../img/logo.png" height="30"></a>
+                    </div>
+                    <div id="basic_topSearch">
+                    	<div class="SearchBox"><img src="../img/searchIcon.png" style="padding-top:3px; margin-left:-15px"/><input type="text" placeholder="Search"  style="border:0;
+	background-color:transparent;color:#457454; width:240px;"/></div>
+                    </div>
+                    <div id="basic_topAccount">
+                    	<li style="padding-top:3px;">
+                    		<a href="SignOutSuccessful.html" class="signOut">Sign Out</a>
+                        </li>
+                        <li>
+                    		<a href="StudentProfile.html"><img src="../img/profile.jpg" height="20"/></a>
+                        </li>
+                        <li style="padding-top:3px">
+                        	Student
+                        </li>
+                    	
+                        <li>
+                        </li>
+                    </div>
+                </div>
+            </center>
+        </div>
+        <div id="basic_middleContainer">
+        	<center>
+         	<div id="basic_spaceOccupy"></div>
+        	<div class="basic_middleWidth">
+           		<div class="basic_card">
+                <div class="teacherHome_statItem">
+                	<div class="teacherHome_statItem_left">
+                    	<li>
+                        	<img src="../img/icon_stat.png" height="25" width="25"/><div><a href="StudentIndex.html">Overview</a></div>
+                            
+                        </li>
+                       
+                        <li  class="teacherHome_statItem_left_selected">
+                        	<img src="../img/icon_content_hover.png" height="25" width="25"/><div><a href="Studentindexcourse.html">Course</a></div>
+                            
+                        </li>
+                        <li>
+                        	<img src="../img/icon_profile.png" height="25" width="25"/><div><a href="StudentProfile.html">Profile</a></div>
+                            
+                        </li>
+                        
+                     
+                    </div>
+                    <div class="teacherHome_statItem_right" id="teacherHome_rateStat">
+                    	<div style="padding:30px;">
+                        	<div class="courseView_Overview">
+                            	<div class="courseView_Pic"><img src="../img/courses/Geophysics.jpg" width="100%"></div>
+                            
+                                <div class="courseView_General">
+                                    <h1>Geology Grade-1</h1>
+                                    <div class="courseView_Author">Created by Teacher</div>
+                                    <p  >Geology gives insight into the history of the Earth, as it provides the primary evidence for plate tectonics, the evolutionary history of life, and past climates. In modern times, geology is commercially important for mineral and hydrocarbon exploration and exploitation and for evaluating water resources.</p>
+                                    <p ><b>Category:</b> Geology</p>
+                                    <p ><b>Tags:</b> Geology, Earth</p>
+                                </div>
+                            	<div class="clear"></div>
+                           </div>
+                           
+                           
+                           <div class="courseView_Detail">
+                           		<ul class="breadcrumb">
+ 								 <li class="inactive"><a href="StudentCourseView.html">Introduction to Earth</a> <span class="divider">/</span></li>
+ 						
+ 								 <li class="active">Continents</li>
+								</ul>
+                           		<li class="courseView_Chapter">
+                                	<div class="courseView_ChapterIcon"><img src="../img/icon_chapter.png" width="100%"><div>Lesson<span>2.1</span></div></div>
+                                    <div class="courseView_ChapterContent">
+                                    	<h1>Americas</h1>
+                                        <p style="height:50px;">The Americas, or America, are lands in the Western Hemisphere that are also known as the New World. </p>
+                                        <p style="margin-top:5px;">
+                                            <div class="ui-progress-bar ui-container transition" id="progress_bar">
+                                                <div class="ui-progress" style="width: 70%;">
+                                                  <span class="ui-label" >70% Complete</span>
+                                                </div>
+                                            </div>
+                                        </p>
+                                    </div>
+                                    <div class="clear"></div>
+                                </li>
+                                
+                                
+                                <li class="courseView_Chapter">
+                                	<div class="courseView_ChapterIcon"><img src="../img/icon_chapter.png" width="100%"><div>Lesson<span>2.2</span></div></div>
+                                    <div class="courseView_ChapterContent">
+                                    	<h1>Australia</h1>
+                                        <p style="height:50px;">Australia is a continent comprising mainland Australia, Tasmania, New Guinea, Seram, possibly Timor, and neighbouring islands.</p>
+                                        <p style="margin-top:5px;">
+                                            <div class="ui-progress-bar ui-container warning" id="progress_bar">
+                                                <div class="ui-progress" style="width: 50%;">
+                                                  <span class="ui-label" >50% Complete</span>
+                                                </div>
+                                            </div>
+                                        </p>
+                                    </div>
+                                    <div class="clear"></div>
+                                </li>
+                                
+                                
+                                
+                                <li class="courseView_Chapter">
+                                	<div class="courseView_ChapterIcon"><img src="../img/icon_chapter.png" width="100%"><div>Lesson<span>2.3</span></div></div>
+                                    <div class="courseView_ChapterContent">
+                                    	<h1>Europe</h1>
+                                        <p style="height:50px;">  Eufrasia, is the largest landmass on Earth. </p>
+                                        <p style="margin-top:5px;">
+                                            <div class="ui-progress-bar ui-container error" id="progress_bar">
+                                                <div class="ui-progress" style="width: 30%;">
+                                                  <span class="ui-label" >30% Complete</span>
+                                                </div>
+                                            </div>
+                                        </p>
+                                    </div>
+                                    <div class="clear"></div>
+                                </li>
+                           </div>
+                           
+                           
+                        </div>
+                        
+                    </div>
+                	<div class="clear"></div>
+                </div>
+                
+                </div>
+       
+            </div>
+            
+            <div id="basic_generalBg">
+               <div id="basic_bg"><img src="../img/bg.png"/></div>
+               </div>
+            </center>
+        </div>
+        
+  
+    	
+
+    </div>
+     <script src="../plugin/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>

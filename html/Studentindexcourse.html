@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="../plugin/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
+<link href="../css/basic.css" rel="stylesheet" />
+<link href="../css/teacherHome.css" rel="stylesheet" />
+<link href="../css/studentcourse.css" rel="stylesheet" type="text/css">
+
+
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="../js/cloud.js"></script>
+
+
+<title>OpenCurriculum</title>
+</head>
+
+<body>
+<script LANGUAGE="javascript">
+$(document).ready(function() {
+	
+	initCloud();
+
+	
+});
+　　</script>
+    <div id="basic_container">
+        <div id="basic_topContainer">
+        	<center>
+            	<div class="basic_middleWidth" id="basic_top_mainContainer">
+                	<div id="basic_topLogoDiv">
+                    	<img src="../img/logo.png" height="30">
+                    </div>
+                    <div id="basic_topSearch">
+                    	<div class="SearchBox"><img src="../img/searchIcon.png" style="padding-top:3px; margin-left:-15px"/><input type="text" placeholder="Search"  style="border:0;
+	background-color:transparent;color:#457454; width:240px;"/></div>
+                    </div>
+                     <div id="basic_topAccount">
+                    	<li style="padding-top:3px;">
+                    		<a href="SignOutSuccessful.html" class="signOut">Sign Out</a>
+                        </li>
+                        
+                    	<li>
+                    		<a href="StudentProfile.html"><img src="../img/profile.jpg" height="20"/></a>
+                        </li>
+                        <li style="padding-top:3px">
+                        	Student
+                        </li>
+                        <li>
+                        </li>
+                    </div>
+                </div>
+            </center>
+        </div>
+        <div id="basic_middleContainer">
+        	<center>
+         	<div id="basic_spaceOccupy"></div>
+        	<div class="basic_middleWidth">
+           		<div class="basic_card">
+                <div class="teacherHome_statItem">
+                	<div class="teacherHome_statItem_left">
+                    	<li>
+                        	<img src="../img/icon_stat.png" height="25" width="25"/><div><a href="StudentIndex.html">Overview</a></div>
+                            
+                        </li>
+                        
+                        <li class="teacherHome_statItem_left_selected">
+                        	<img src="../img/icon_content_hover.png" height="25" width="25"/><div><a href="Studentindexcourse.html">Course</a></div>
+                            
+                        </li>
+                        <li>
+                        	<img src="../img/icon_profile.png" height="25" width="25"/><div><a href="StudentProfile.html">Profile</a></div>
+                            
+                        </li>
+                        
+                     
+                    </div>
+                    <div class="teacherHome_statItem_right" id="teacherHome_rateStat">
+                    	<div class="studentCourse_container">
+                        	<div class="jumbotron courseHeader">
+                              <h1>My Courses</h1>
+                              <p>
+                              	<a href="#">Math <span class="badge">3</span></a>
+                                <a href="#">Physics <span class="badge">6</span></a>
+                                <a href="#">Chemistry <span class="badge">1</span></a>
+                              </p>
+                              
+                            </div>
+                            <ul class="nav nav-tabs">
+                              <li class="active"><a href="#">All Courses</a></li>
+                              <li><a href="#">Recent Learned Courses</a></li>
+                              <li><a href="#">Courses Fall Behind Average</a></li>
+                            </ul>
+                            <div class="courseNavContent">
+                            	　<!--<ul class="thumbnails">
+                                  <li class="span4 courseContentItem">
+                                    <span href="#" class="thumbnail">
+                                    <a href="#" class="courseContentItemPic">
+                                    	<div ></div>
+                                      	<h3>Thumbnail label</h3>
+                                        <span class="courseContentItemProgrss"><span></span></span>
+                                      </a>
+                                      <p><div class="btn-group">
+                                          <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                                            Action
+                                            <span class="caret"></span>
+                                          </a>
+                                          <ul class="dropdown-menu" style="text-align:left;">
+                                            <li><a href="../html/StudentCourseView.html">View Detail</a></li>
+                                            <li><a href="#">Drop Course</a></li>
+                                          </ul>
+                                        </div></p>
+                                    </span>
+                                    
+                                  </li>
+                                  
+								  <li class="span4 courseContentItem">
+                                    <span href="#" class="thumbnail">
+                                    <a href="#" class="courseContentItemPic">
+                                    	<div ></div>
+                                      	<h3>Thumbnail label</h3>
+                                        <span class="courseContentItemProgrss"><span></span></span>
+                                      </a>
+                                      <p><div class="btn-group">
+                                          <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                                            Action
+                                            <span class="caret"></span>
+                                          </a>
+                                          <ul class="dropdown-menu" style="text-align:left;">
+                                              <li><a href="../html/StudentCourseView.html">View Detail</a></li>
+                                            <li><a href="#">Drop Course</a></li>
+                                          </ul>
+                                        </div></p>
+                                    </span>
+                                    
+                                  </li>
+                                  
+                                  <li class="span4 courseContentItem">
+                                    <span href="#" class="thumbnail">
+                                    <a href="#" class="courseContentItemPic">
+                                    	<div ></div>
+                                      	<h3>Thumbnail label</h3>
+                                        <span class="courseContentItemProgrss"><span></span></span>
+                                      </a>
+                                      <p><div class="btn-group">
+                                          <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                                            Action
+                                            <span class="caret"></span>
+                                          </a>
+                                          <ul class="dropdown-menu" style="text-align:left;">
+                                              <li><a href="../html/StudentCourseView.html">View Detail</a></li>
+                                            <li><a href="#">Drop Course</a></li>
+                                          </ul>
+                                        </div></p>
+                                    </span>
+                                    
+                                  </li>
+                                  
+                                  <li class="span4 courseContentItem">
+                                    <span href="#" class="thumbnail">
+                                    <a href="#" class="courseContentItemPic">
+                                    	<div ></div>
+                                      	<h3>Thumbnail label</h3>
+                                        <span class="courseContentItemProgrss"><span></span></span>
+                                      </a>
+                                      <p><div class="btn-group">
+                                          <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                                            Action
+                                            <span class="caret"></span>
+                                          </a>
+                                          <ul class="dropdown-menu" style="text-align:left;">
+                                              <li><a href="../html/StudentCourseView.html">View Detail</a></li>
+                                            <li><a href="#">Drop Course</a></li>
+                                          </ul>
+                                        </div></p>
+                                    </span>
+                                    
+                                  </li>                                  
+                                  
+                                  
+                                </ul>
+                            -->
+                            <ul class="thumbnails">
+                                  <li class="span4 courseContentItem">
+                                    <span href="#" class="thumbnail">
+                                    <a href="../html/StudentCourseView.html" class="courseContentItemPic">
+                                    	<div style="background:url(../img/courses/Geophysics.jpg);"></div>
+                                      	<h3>Introduction to Earth</h3>
+                                        <span class="courseContentItemProgrss"><span style="width:10%"></span></span>
+                                      </a>
+                                  
+                                    </span>
+                                    <div class="courseEditPanel" style="width:25px;"><a href="#"><i class="icon-remove icon-white"></i></a></div>
+                                  </li>
+                                  
+								  <li class="span4 courseContentItem">
+                                    <span href="#" class="thumbnail">
+                                    <a href="#" class="courseContentItemPic">
+                                    	<div style="background:url(../img/courses/astronomy.jpeg) no-repeat;"></div>
+                                      	<h3>Introduction to Space</h3>
+                                        <span class="courseContentItemProgrss" ><span style="width:90%"></span></span>
+                                      </a>
+                                     
+                                    </span>
+                                    <div class="courseEditPanel" style="width:25px;"><a href="#"><i class="icon-remove icon-white"></i></a></div>
+                                  </li>
+                                  
+                                  <li class="span4 courseContentItem">
+                                    <span href="#" class="thumbnail">
+                                    <a href="#" class="courseContentItemPic">
+                                    	<div style="background:url(../img/courses/sun.jpeg);"></div>
+                                      	<h3>Sun Introduction</h3>
+                                        <span class="courseContentItemProgrss"><span style="width:40%"></span></span>
+                                      </a>
+                                      
+                                    </span>
+                                    <div class="courseEditPanel" style="width:25px;"><a href="#"><i class="icon-remove icon-white"></i></a></div>
+                                  </li>
+                                  
+                                  <li class="span4 courseContentItem">
+                                    <span href="#" class="thumbnail">
+                                    <a href="#" class="courseContentItemPic">
+                                    	<div style="background:url(../img/courses/vocalno.jpeg);"></div>
+                                      	<h3>Geology Disaster</h3>
+                                        <span class="courseContentItemProgrss"><span style="width:30%"></span></span>
+                                      </a>
+                                      
+                                    </span>
+                                    <div class="courseEditPanel" style="width:25px;"><a href="#"><i class="icon-remove icon-white"></i></a></div>
+                                  </li>                                  
+                                  
+                                  
+                                </ul>
+                            </div>
+                    	</div>
+                	
+                	</div>
+                	<div class="clear"></div>
+                </div>
+       
+            </div>
+            </div>
+            </center>
+        </div>
+        <div id="basic_generalBg">
+               <div id="basic_bg"><img src="../img/bg.png"/></div>
+               <div class="cloudLayer">
+               	<div class="cloud clouds-1"></div>
+                <div class="cloud clouds-2"></div>
+                <div class="cloud clouds-3"></div>
+                <div class="cloud clouds-4"></div>
+                <div class="cloud clouds-5"></div>
+                <div class="cloud clouds-6"></div>
+                <div class="cloud clouds-7"></div>
+                <div class="cloud clouds-8"></div>
+                <div class="cloud clouds-9"></div>
+               
+               </div>
+        </div>
+    </div>
+ <script src="../plugin/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>

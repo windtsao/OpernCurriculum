@@ -1,0 +1,84 @@
+@charset "utf-8";
+.course{
+width:90%;
+float:left;
+height:95px;
+text-align:center;
+//border-right:#bebebe 1px solid;
+//border-left:#bebebe 1px solid;
+text-align:center;
+display:block;
+padding-top:1%;
+position:relative;
+word-wrap: break-word;   word-break: break-all;
+padding-top:1em;
+margin-bottom:1em;
+}
+.courseLink{
+//text-shadow: #bebebe 0 1px 0;
+float:left;
+width:100%;
+font-size:18px;
+font-family:Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+color:#444;
+text-decoration:none;
+padding-bottom:2%;
+text-align:left;
+padding-left:8%;
+}
+.course span{
+	font-size:12px;
+}
+.imgCourse{
+float:left;
+margin-left:20px;
+cursor:pointer;
+width:80px;
+height:80px;
+margin-bottom: 15px;
+-webkit-transition: -webkit-transform 1s,opacity 1s,background 1s,width 0.5s,height 0.5s,font-size 1s;
+transition-duration: 1s,1s,1s,1s,1s,1s;
+}
+.course cite { background:none; -moz-opacity:.50; filter:alpha(opacity=50);
+opacity:.90;
+  color: #000; position: absolute; bottom: 0; left: 150px;
+  font-style:normal;
+top: 90px;
+width: 50%;height:0.5em; padding-top: 5px; padding-bottom: 15px;
+//border: 1px solid #999;
+font-size:13px; 
+border-radius: 5px; }
+.course cite progress{
+width:40%;
+margin-right:20px;
+}
+.course cite span{
+margin-left:-15px;
+position:relative;
+}
+.hitoryRightDiv{
+float:left;
+padding:1% 1%;
+float:left;
+text-align:left;
+margin-left:8%;
+width:50%;
+}
+.historyProgressDiv{
+	float:left;
+	width:140%;
+}
+.historyProgressDiv progress{
+	width:40%;
+	margin-right:2%;
+
+}/* CSS Document */
+.historyDiv{
+padding:2% 5%;
+float:left
+width:90%;
+text-align:left;
+}
+.historyDiv p{
+font:"Times New Roman";
+}

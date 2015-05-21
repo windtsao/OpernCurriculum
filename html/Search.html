@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="../plugin/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
+<link href="../css/basic.css" rel="stylesheet" />
+<link href="../css/teacherHome.css" rel="stylesheet" />
+<link href="../css/studentcourse.css" rel="stylesheet" type="text/css">
+<link href="../css/search.css" rel="stylesheet" type="text/css">
+<link href="../css/NonloginTop.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+ 
+
+<title>OpenCurriculum</title>
+</head>
+
+<body onLoad="run();">
+<script LANGUAGE="javascript">
+　　<!--
+　　function openwin() { 
+window.open ("teacherMap.html")
+　　}
+
+-->
+function run(){
+var basictop = document.getElementById("basic_toptop");
+//var msg=document.createTextNode("lalala");
+basictop.appendChild(msg);
+}
+　　</script>
+    <div id="basic_container">
+        <div id="basic_topContainer">
+        	<center>
+            	<div class="basic_middleWidth" id="basic_top_mainContainer">
+                	<div id="basic_topLogoDiv">
+                    	<a href="index.html"><img src="../img/logo.png" height="30"></a>
+                    </div>
+                    <div id="basic_toptop">
+                     <div id="basic_topSearch">
+                    	<ui><li><div class="SearchBox"><img src="../img/searchIcon.png" style="padding-top:3px; margin-left:-15px"/><input type="text" placeholder="Search"  style="border:0;
+	background-color:transparent;color:#457454; width:240px;"/></div></li>
+   						<li id="search_btn">
+                        <span> Sign up to access more contents in OpenCurriculum</span>
+                        <input id="signup_btn" class="btn" type="button" value="Sign up Here" width="150px"/>
+                        </li>
+                    </div>
+                    <ui id="loginUI">
+                    <li>
+                    <input class="top_signin" type="text" placeholder="UserName"/>
+                    </li>
+                     <li>
+                    <input class="top_signin" type="password" placeholder="Password"/>
+                    </li>
+                    </ui>
+                    <input id="signin_btn" class="btn" type="button" value="Sign in" width="150px"/>
+                    </div>
+                   
+                </div>
+            </center>
+        </div>
+        <div id="basic_middleContainer">
+        	<center>
+         	<div id="basic_spaceOccupy"></div>
+        	<div class="basic_middleWidth">
+           		<div class="basic_card" id="basic_middle">
+                <div class="teacherHome_statItem">
+                	
+                    </div>
+                    <div class="teacherHome_statItem_right" id="teacherHome_rateStat">
+                    	
+                        	<div class="searchContainer">
+                            	<h1>Search Results</h1>
+                                <ul class="nav nav-tabs">
+                                  <li class="active"><a href="#">Everything &nbsp;<span class="badge">42</span></a></li>
+                                  <li><a href="#">Course &nbsp;<span class="badge">5</span></a></li>
+                                  <li><a href="#">Concepts &nbsp;<span class="badge">11</span></a></li>
+                                  <li><a href="#">Content &nbsp;<span class="badge">25</span></a></li>
+                                </ul>
+                                <table class="table table-hover searchResult">
+                               <tr>
+                               		<td width="20%"><a href="#"><img src="../img/courses/astronomy.jpeg"></a></td>
+                                    <td width="70%"><a href="#"><h4>Introduction to Space</h4><p class="searchDescription">Space is the boundless three-dimensional extent in which objects and events have relative position and direction. </p><p>Views: 12017</p></a></td>
+                                   <td class="searchTag"><div class="conceptTag">Concept</div></td>
+                               </tr>
+                               <tr>
+                               		<td width="20%"><a href="#"><img src="../img/courses/sun.jpeg"></a></td>
+                                    <td width="70%"><a href="#"><h4>About the Sun</h4><p class="searchDescription">Space is the boundless three-dimensional extent in which objects and events have relative position and direction. </p><p>Views: 12017</p></a></td>
+                                   <td class="searchTag"><div class="courseTag">Course</div></td>
+                               </tr>
+                               <tr>
+                               		<td width="20%"><a href="#"><img src="../img/courses/vocalno.jpeg"></a></td>
+                                    <td width="70%"><a href="#"><h4>Geology Disaster</h4><p class="searchDescription">Space is the boundless three-dimensional extent in which objects and events have relative position and direction. </p><p>Views: 12017</p></a></td>
+                                   <td class="searchTag"><div class="contentTag">Content</div></td>
+                               </tr>
+                               
+                             </table>  
+                            </div>
+                             
+                        
+                        
+                        
+                        
+                    </div>
+                	<div class="clear"></div>
+                </div>
+                
+                </div>
+       
+            </div>
+            <div id="basic_generalBg">
+               <div id="basic_bg"><img src="../img/bg.png"/></div>
+               </div>
+            </center>
+        </div>
+    </div>
+    <div id="basic_bg"></div>
+     <script src="../plugin/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>

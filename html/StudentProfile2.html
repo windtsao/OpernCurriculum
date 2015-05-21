@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="../css/bootstrap-fileupload.min.css" />
+ <link href="../plugin/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
+<link href="../css/master.css" rel="stylesheet" type="text/css" />
+<link href="../css/basic.css" rel="stylesheet" />
+<link href="../css/teacherHome.css" rel="stylesheet" />
+<link href="../css/index.css" rel="stylesheet" />
+<link href="../plugin/Xeditable/css/bootstrap-editable.css"/>
+
+<link href="../css/bootstrap-fileupload.css"/>
+
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="../plugin/Xeditable/js/bootstrap-editable.min.js"></script>
+<script src="../plugin/Xeditable/js/moment.js"></script>
+<script src="../plugin/Xeditable/js/address.js"></script>
+<script src="../js/bootstrap-fileupload.min.js"></script>
+<script src="../js/bootstrap-fileupload.js"></script>
+<script>
+function showInfo(id){
+	var icon = document.createElement("i");
+	icon.setAttribute("class","icon-pencil icon-black");
+	id.appendChild(icon);
+}
+function hideInfo(id){
+	var icon = id.getElementsByTagName("i")[0];
+	id.removeChild(icon);
+}
+$(document).ready(function() {
+    $('.editable').editable();
+	$('#address').editable({
+    value: {
+        street: "222 Main st. SW",
+        building: "12",
+        city: "Redmond",
+        state: "WA",
+        zip: "98052"
+    }, // End value
+    validate: function(value) {
+        if(value.city == '') return 'city is required!'; 
+    }, // End validate function()
+    display: function(value) {
+        if(!value) {
+            $(this).empty();
+            return; 
+        } // End if
+        var html = $('<div>').text(value.street).html() + ' #' + $('<div>').text(value.building).html() + ' <b>' + $('<div>').text(value.city).html() + ', ' + $('<div>').text(value.state).html() + '</b> ' + $('<div>').text(value.zip).html();
+        $(this).html(html); 
+    } // End display option
+});
+});
+</script>
+
+<title>OpenCurriculum</title>
+</head>
+
+<body>
+    <div id="basic_container">
+        <div id="basic_topContainer">
+        	<center>
+            	<div class="basic_middleWidth" id="basic_top_mainContainer">
+                	<div id="basic_topLogoDiv">
+                    	<a href="Index.html"><img src="../img/logo.png" height="30"></a>
+                    </div>
+                    <div id="basic_topSearch">
+                    	<div class="SearchBox"><img src="../img/searchIcon.png" style="padding-top:3px; margin-left:-15px"/><input type="text" placeholder="Search"  style="border:0;
+	background-color:transparent;color:#457454; width:240px;"/></div>
+                    </div>
+                    <div id="basic_topAccount">
+                    	<li style="padding-top:3px;">
+                    		<a href="SignOutSuccessful.html" class="signOut">Sign Out</a>
+                        </li>
+                        <li>
+                    		<a href="StudentProfile.html"><img src="../img/profile.jpg" height="20"/></a>
+                        </li>
+                        <li style="padding-top:3px">
+                        	Student
+                        </li>
+                        <li>
+                        </li>
+                    </div>
+                </div>
+            </center>
+        </div>
+        <div id="basic_middleContainer">
+        	<center>
+         	<div id="basic_spaceOccupy"></div>
+        	<div class="basic_middleWidth">
+           		<div class="basic_card">
+                <div class="teacherHome_statItem">
+                	<div class="teacherHome_statItem_left">
+                    	<li>
+                        	<img src="../img/icon_stat.png" height="25" width="25"/><div><a href="StudentIndex.html">Overview</a></div>
+                            
+                        </li>
+                        <li>
+                        	<img src="../img/icon_group.png" height="25" width="25"/><div><a href="Studentindexcourse.html">Course</a></div>
+                            
+                        </li>
+                      
+                        <li class="teacherHome_statItem_left_selected">
+                        	<img src="../img/icon_profile_hover.png" height="25" width="25"/><div><a href="StudentProfile.html">Profile</a></div>
+                            
+                        </li>
+                        
+                     
+                    </div>
+                    <div class="teacherHome_statItem_right" id="teacherHome_rateStat">
+          						<form action="" method="post" class="profileForm">
+                                    <div class="">
+                                      <h3>View Profile			</h3>
+                                      <hr>
+                                       	<div class="fileupload fileupload-new" data-provides="fileupload">
+  <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;"><img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image" /></div>
+  <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+  <div>
+    <span class="btn btn-file"><span class="fileupload-new">Select image</span><span class="fileupload-exists">Change</span><input type="file" /></span>
+    <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+  </div>
+</div>
+ <hr>
+                                      <h5 style="color:gray">Click on fields to edit:</h5>
+                                    </div>
+                                
+                                        <table style="width:600px;" cellspacing="0" cellpadding="0" class="table table-bordered table-striped">
+                                          <tbody>
+                                            <tr>
+                                                <td width="25%" class="detail_left">Username:</td>
+                                                
+                                                <td width="65%" class="detail_right"><a href="#" id="username" data-type="text" data-pk="1" data-name="username" data-placement="right" data-original-title="Enter username" class="editable" onMouseOver="showInfo(this);" onMouseOut="hideInfo(this);">Student</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="detail_left">First Name:</td>
+                                                <td class="detail_right"><a href="#" id="firstname" data-type="text" data-title="Enter firstname" class="editable editable-click" data-placement="right" style="color: gray;" onMouseOver="showInfo(this);" onMouseOut="hideInfo(this);">Barry</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="detail_left">Last Name</td>
+                                                <td class="detail_right"><a href="#" id="lastname" data-type="text" data-title="Enter lastname" class="editable editable-click" data-placement="right" style="color: gray;" onMouseOver="showInfo(this);" onMouseOut="hideInfo(this);">Guan</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="detail_left">School</td>
+                                                <td class="detail_right"><a href="#" id="lastname" data-type="text" data-title="Enter lastname" class="editable editable-click" data-placement="right" style="color: gray;" onMouseOver="showInfo(this);" onMouseOut="hideInfo(this);">Tony High School</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="detail_left">Gender:</td>
+                                                <td class="detail_right"><a href="#" id="sex" data-type="select" data-source="[{value: 1, text: 'Male'}, {value: 2, text: 'Female'}]" data-value="1"  data-original-title="Select sex" style="color: gray;" class="editable editable-click" data-placement="right" onMouseOver="showInfo(this);" onMouseOut="hideInfo(this);"></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="detail_left">Date of Birth:</td>
+                                                <td class="detail_right"><a href="#" id="dob" data-type="combodate" data-value="1984-05-15" data-format="YYYY-MM-DD" data-viewformat="DD/MM/YYYY" data-template="D / MMM / YYYY" data-original-title="Select Date of birth" class="editable editable-click" data-placement="right" style="color: gray;" onMouseOver="showInfo(this);" onMouseOut="hideInfo(this);">15/05/1984</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="detail_left">Address:</td>
+                                                <td class="detail_right"><a href="#" id="address" data-type="address" data-pk="1" data-original-title="Please, fill address" data-placement="right" style="color: gray;" onMouseOver="showInfo(this);" onMouseOut="hideInfo(this);"></a></td>
+                                            </tr>
+                                            
+                                        
+                                                <tr>
+                                                <td class="detail_left">Email Address:</td>
+                                                <td class="detail_right"><a href="#" id="email" data-type="text" data-title="Enter email" class="editable editable-click" data-placement="right" style="color: gray;" onMouseOver="showInfo(this);" onMouseOut="hideInfo(this);">Barry@gmail.com</a></td>
+                                            </tr>                                          
+                                          </tbody>
+                                        </table>
+                        
+                                            
+</form>   
+	  
+                    </div>
+                	<div class="clear"></div>
+                </div>
+                
+                </div>
+       
+            </div>
+            </center>
+        </div>
+    </div>
+    <div id="basic_generalBg">
+               <div id="basic_bg"><img src="../img/bg.png"/></div>
+               </div>
+                
+    <script src="../plugin/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>

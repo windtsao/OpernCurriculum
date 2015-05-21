@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="../css/basic.css" rel="stylesheet" />
+<link href="../css/teacherHome.css" rel="stylesheet" />
+<link href="../plugin/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
+<link href="../css/editMap.css" rel="stylesheet" type="text/css">
+<link href="../plugin/multiselect/css/multi-select.css" media="screen" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="../plugin/tag/jquery.tagsinput.min.js"></script>
+<script type="text/javascript" src="../plugin/flow/jquery.nestable.js"></script>
+<script type="text/javascript" src="../plugin/popup/jquery.bpopup.min.js"></script>
+<link href="../plugin/tag/jquery.tagsinput.css" rel="stylesheet"/>
+<script type="text/javascript" src="../plugin/multiselect/js/jquery.multi-select.js"></script>
+
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+
+<title>OpenCurriculum</title>
+</head>
+
+<body>
+<script>
+var addType=0;
+var addObj;
+var tabType="topic";
+function addElement(){
+	if(tabType="topic"){
+		addConcept();
+	}else{
+		addContent();
+	}
+
+}
+function showEditPopup(){
+	$('#editMap_editPopup').modal();
+}
+function delSubTopic(obj){
+	if($(obj).parent().parent().parent().find("li").length==1){
+			$(obj).parent().parent().parent().find("button").remove();
+	}
+	$(obj).parent().parent().remove();
+}
+var contentSelcted=null; 
+var liHtml1="<li class='dd-item' data-id='-1' data-type='##type##' data-title='##title##' data-description='##description##' data-label='##label##'><div class='dd-handle editMap_moveBtn'></div>  <div class='editMap_content'>"
+var liHtml2="<i class='icon-remove editMap_addBtn' onclick='delSubTopic(this)'></i>"
+var liHtml3="<i class='icon-plus editMap_addBtn' onclick='addSubTopic(this)'></i><i class='icon-pencil editMap_addBtn' onclick='showEditPopup()'></i>";
+var liHtml4="</div></li>";
+function addSubTopic(obj){
+	$("#addConceptTitle").val("");
+	addType=1;
+	addObj=obj;
+	$('#editMap_addPopup').modal();
+     
+	 
+}
+function addConcept(){
+	var obj=addObj;
+	var templiHtml1=liHtml1.replace("##title##",$("#addConceptTitle").val());
+	 templiHtml1=templiHtml1.replace("##description##",$("#addConceptDescription").val());
+	 templiHtml1=templiHtml1.replace("##type##","topic");
+	 var label=$("input[name=elementLabel]:checked").val();	
+	if(label=="Other"){
+		label=$("#otherLabelInput").val();
+	}
+	templiHtml1=templiHtml1.replace("##label##",label);
+	if(addType==0){
+		$(obj).parent().append(templiHtml1+$("#addConceptTitle").val()+liHtml2+liHtml3+liHtml4);
+	}
+	
+	 else if($(obj).parent().parent().find("button").length ==0){
+	 	$(obj).parent().parent().prepend("<button data-action='collapse' type='button'>Collapse</button><button data-action='expand' type='button' style='display: none;'>Expand</button>");
+		 $(obj).parent().parent().append("<ol class='dd-list'>"+templiHtml1+$("#addConceptTitle").val()+liHtml2+liHtml3+liHtml4+"</ol>");
+		 
+	 }else{
+		 $(obj).parent().next().append(templiHtml1+$("#addConceptTitle").val()+liHtml2+liHtml3+liHtml4);
+		 
+	}
+	$('#editMap_addPopup').modal('hide');
+	}
+function addContent(){
+	var obj=addObj;
+	var templiHtml1=liHtml1.replace("##type##","content");
+	 templiHtml1=templiHtml1.replace("data-id='-1'","data-id='"+$(contentSelcted).attr("content-id")+"'");
+	if(addType==0){
+		$(obj).parent().append(templiHtml1+$(contentSelcted).html()+liHtml2+liHtml4);
+	}
+	
+	 else if($(obj).parent().parent().find("button").length ==0){
+	 	$(obj).parent().parent().prepend("<button data-action='collapse' type='button'>Collapse</button><button data-action='expand' type='button' style='display: none;'>Expand</button>");
+		 $(obj).parent().parent().append("<ol class='dd-list'>"+templiHtml1+$(contentSelcted).html()+liHtml2+liHtml4+"</ol>");
+		 
+	 }else{
+		 $(obj).parent().next().append(templiHtml1+$(contentSelcted).html()+liHtml2+liHtml4);
+		 
+	}
+	$('#editMap_addPopup').modal('hide');
+	}
+
+var updateOutput = function(e)
+    {
+        var list   = e.length ? e : $(e.target),
+            output = list.data('output');
+        if (window.JSON) {
+            output.val(window.JSON.stringify(list.nestable('serialize')));//, null, 2));
+        } else {
+            output.val('JSON browser support required for this demo.');
+        }
+    };
+
+$(document).ready(function() {
+	
+	$('#addNav a').click(function (e) {
+	  e.preventDefault();
+	  tabType=$(this).attr("type");
+	  $(this).tab('show');
+	});
+	//recurse();
+	
+	 $('#maptags_input').tagsInput();
+	 $('#mapgroup_input').tagsInput({
+		 'defaultText':'add a group'
+		 });
+		 
+	 $('.dd').nestable({ /* config options */ 
+			maxDepth:10
+	 })
+	 
+	 $("#editMap_rootAdd").click(function () {
+		  $("#addConceptTitle").val("");
+		  addType=0;
+		  addObj=this;
+			$('#editMap_addPopup').modal();
+	});
+	$(".selectingContent").click(function () {
+		contentSelcted=this;
+	
+	});
+	
+	$('#assignedGroup').multiSelect({
+		selectableHeader: "<div >Unassigned</div>",
+  selectionHeader: "<div >Assigned</div>"
+		});
+	
+	
+	$( "#contentSelectable" ).selectable({
+		  selected: function( event, ui ) {
+				
+				contentSelcted=ui.selected.innerHTML;
+		}
+		});
+	
+ });
+function submitCourse(){
+	var group="";
+	$(".ms-selection > .ms-selected").each(function (){
+		group=course+$(this).attr("id").split("-",1)+",";
+	});
+	if(group.length>0)
+	group=group.substring(0,group.length-1);	
+	
+}
+function recurse(){
+	var json="[{\"previous_element_id\": null, \"description\": \"aa\", \"title\": \"11111\", \"children\": [{\"previous_element_id\": null, \"description\": \"bb\", \"title\": \"bb\", \"children\": [], \"id\": 3, \"content_id\": -1, \"course_map_id\": 1, \"parent_element_id\": 2}], \"id\": 2, \"content_id\": -1, \"course_map_id\": 1, \"parent_element_id\": 1}]";
+	var obj = JSON.parse(json);
+	var html=generateChildren(obj);
+	$(".dd-list").append(html);
+}
+
+function generateChildren(obj){
+	var html="";
+
+	for(var i=0;i<obj.length;i++){
+		var templiHtml1;
+		templiHtml1=liHtml1.replace("data-id='-1'","data-id='"+obj[i].id+"'");
+		if(obj[i].type=="topic"){
+			templiHtml1=liHtml1.replace("##title##",obj[i].title);
+			templiHtml1=templiHtml1.replace("##description##",obj[i].description);
+			templiHtml1=templiHtml1.replace("##type##","topic");
+			templiHtml1=templiHtml1+obj[i].title+liHtml2+liHtml3;
+		}else{
+			templiHtml1=liHtml1.replace("##type##","content");
+			templiHtml1=templiHtml1+obj[i].title+liHtml2;
+		}
+		templiHtml1=templiHtml1+"</div>";
+		if(obj[i].hasOwnProperty('children')){
+			if(obj[i].children.length!=0)
+			templiHtml1=templiHtml1+"</div><ol class='dd-list'>"+generateChildren(obj[i].children)+"</ol>";
+		}
+		templiHtml1=templiHtml1+"</li>";
+		html=html+templiHtml1;
+	}
+	return html;
+}
+function displaySyllabus(){
+	$(".syllabus_Instruction").hide();
+	$("#syllabusContainer").show();
+}
+	
+</script>
+    <div id="basic_container">
+        <div id="basic_topContainer">
+        	<center>
+            	<div class="basic_middleWidth" id="basic_top_mainContainer">
+                	<div id="basic_topLogoDiv">
+                    	<a href="index.html"><img src="../img/logo.png" height="30"></a>
+                    </div>
+                    <div id="basic_topSearch">
+                    	<div class="SearchBox"><img src="../img/searchIcon.png" style="padding-top:3px; margin-left:-15px"/><input type="text" placeholder="Search"  style="border:0;
+	background-color:transparent;color:#457454; width:240px;"/></div>
+                    	
+                    </div>
+                    <div id="basic_topAccount">
+                    <li style="padding-top:3px;">
+                    		<a href="SignOutSuccessful.html" class="signOut">Sign Out</a>
+                        </li>
+                    <li style="padding-top:3px">
+                        	Teacher
+                        </li>
+                    	<li>
+                    		<a href="TeacherProfile.html"><img src="../img/profile.jpg" height="20"/></a>
+                        </li>
+                        
+                        <li>
+                        </li>
+                    </div>
+                </div>
+            </center>
+        </div>
+        <div id="basic_middleContainer">
+        	<center>
+         	<div id="basic_spaceOccupy"></div>
+        	<div class="basic_middleWidth">
+           		<div class="basic_card">
+                <div class="teacherHome_statItem">
+                	<div class="teacherHome_statItem_left">
+                    	<li>
+                        	<img src="../img/icon_stat.png" height="25" width="25"/><div><a href="TeacherHome.html">Overview</a></div>
+                            
+                        </li>
+                        <li>
+                        	<img src="../img/icon_group.png" height="25" width="25"/><div><a href="TeacherGroup.html">Group</a></div>
+                            
+                        </li>
+                        <li class="teacherHome_statItem_left_selected">
+                        	<img src="../img/icon_content_hover.png" height="25" width="25"/><div><a href="TeacherCourse.html">Course</a></div>
+                            
+                        </li>
+                        <li>
+                        	<img src="../img/icon_profile.png" height="25" width="25"/><div><a href="TeacherProfile.html">Profile</a></div>
+                            
+                        </li>
+                        
+                     
+                    </div>
+                    <div class="teacherHome_statItem_right" id="teacherHome_rateStat">
+                    	<div>
+                        	<div class="mapEdit_Container">
+                                <h1>Create Course</h1>
+                               	<h2>Course Basic Information</h2>
+                                <h3>Course Name</h3>
+                                <div class="mapEdit_entry"><input type="text" placeholder="Course Name" class="editMap_input"/></div>
+                                
+                                
+                                 <h3>Course Syllabus</h3>
+                                 <div class="syllabus_Instruction">
+                                 	<div class="instruction_title">How to create course syllabus?</div>
+                                    <div class="instruction_btn"><a class="btn btn-large btn-primary">Watch the video instruction</a></div>
+                                    <div class="instruction_btn"><a class="btn btn-success"  href="javascript:displaySyllabus()">Skip the instruction, and begin creating syllabus</a></div>
+                                 </div>
+                                <div class="mapEdit_entry" id="syllabusContainer" style="display:none;">
+                                
+                                
+                                
+                                
+<div class="modal hide fade" id="editMap_editPopup">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h3>Edit</h3>
+  </div>
+  <div class="modal-body">
+
+                                        <h3>Title</h3>
+                                        <div class="mapEdit_entry"><input type="text" placeholder="Title" class="editMap_input" style="width:80%"/></div>
+                                        <h3>Description</h3>
+                                        <div class="mapEdit_entry"><textarea class="editMap_input" style="padding-top:10px;height:50px; width:80%" placeholder="Description..."/></textarea></div>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn">Close</a>
+    <a href="#" class="btn btn-primary">Edit</a>
+  </div>
+</div>
+                                
+
+
+<div class="modal hide fade" id="editMap_addPopup">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h3>Add</h3>
+  </div>
+  <div class="modal-body">
+<div class="tabbable">
+                                        <ul class="nav nav-tabs" id="addNav">
+                                              <li class="active">
+                                                <a href="#tab1" data-toggle="tab" type="topic">Add Topic</a>
+                                              </li>
+                                              <li><a href="#tab2" data-toggle="tab" type="content">Add Content</a></li>
+                                        </ul>
+                                        <div class="tab-content">
+                                            <div class="tab-pane active" id="tab1" style="overflow:hidden">
+                                              <h3>Title</h3>
+                                                <div class="mapEdit_entry"><input type="text" placeholder="Title" class="editMap_input" style="width:80%" id="addConceptTitle"/></div>
+                                                <h3>Description</h3>
+                                                <div class="mapEdit_entry"><textarea class="editMap_input" style="padding-top:10px;height:50px; width:80%" placeholder="Description..." id="addConceptDescription"/></textarea></div>
+                                                <h3>Show as</h3>
+<div>Lesson<input name="elementLabel" type="radio" value="Lesson" checked style="margin-right:20px;">Unit<input name="elementLabel" type="radio" value="Unit"  style="margin-right:20px;">Module<input name="elementLabel" type="radio" value="Module"   style="margin-right:20px;">Chapter<input name="elementLabel" type="radio" value="Chapter"   style="margin-right:20px;">Other<input name="elementLabel" type="radio" value="Other" ><input value="" type="text" class="input-small" id="otherLabelInput"/></div>
+                                            </div>
+                                            <div class="tab-pane" id="tab2" style="overflow:hidden">
+                                            	<div  class="form-search">
+                                                      <div class="input-append">
+                                                        <input type="text" class="span2 search-query">
+                                                        <a type="submit" class="btn">Search</a>
+                                                      </div>
+                                              </div>
+                                              <p>
+                                              	<ol id="contentSelectable">
+                                                      
+                                                    </ol>
+                                               </p>
+                                               
+                                            </div>
+                                          </div>
+                                         </div>
+                                    
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn">Close</a>
+    <a href="javascript:addElement()" class="btn btn-primary">Add</a>
+  </div>
+</div>                     
+                                	
+                                    
+                                    
+                                  
+                                    
+                                    
+                                	<div class="dd editMap_flow">
+                                    	<ol class="dd-list">
+                                        <a href="#" id="editMap_rootAdd"><i class="icon-plus" ></i>Add Topic</a>
+                                          <div class="clear"></div>
+                                           
+                                        </ol>
+                                    </div>
+                                   
+                                </div>
+                                
+                                <h3>Who can see this course</h3>
+                                  <div  class="mapEdit_entry">
+                                	Only me<input name="visibility" type="radio" value="" checked  onSelect="" style="margin-right:20px;">
+                                    Everybody<input name="visibility" type="radio" value="" style="margin-right:20px;">
+                                    People with URL<input name="visibility" type="radio" value="" style="margin-right:20px;">
+                                </div>
+                                <div id="assignGroupDiv">
+                                 <h3>Assigned Group</h3>
+                                <div  class="mapEdit_entry">
+                                    <select multiple="multiple" id="assignedGroup" name="">
+                                          <option value='1'>Group 1</option>
+                                          <option value='2'>Group 2</option>
+                                          <option value='3'>Group 3</option>
+                                          <option value='4'>Group 4</option>
+                                    </select>
+                                
+                                </div>
+                                </div>
+                                
+                                <h2>Course Additional Information (Optional)</h2>
+                                <h3  data-toggle="collapse" data-target="#courseDescription" class="accordion-toggle expand">Course Description</h3>
+                                <div class="mapEdit_entry  collapse" id="courseDescription" ><textarea class="editMap_input" style="padding-top:10px;height:50px; width:80%;"  placeholder="Describe your course"/></textarea></div>
+                                <h3   data-toggle="collapse" data-target="#courseCategory" class="accordion-toggle expand">Course Category</h3>
+                                <div  class="mapEdit_entry  collapse" id="courseCategory"><select  class="mapEdit_select"><Option value="">Math</Option></select></div>
+                                <h3   data-toggle="collapse" data-target="#courseTags" class="accordion-toggle expand">Course Tag</h3>
+                                <div  class="mapEdit_entry  collapse" id="courseTags"><input name="tags" id="maptags_input" value="math"/></div>
+                                <h3    data-toggle="collapse" data-target="#courseThumbnail" class="accordion-toggle expand">Course Thumbnail</h3>
+                                <div class="mapEdit_entry  collapse"  id="courseThumbnail"><input type="file" style="padding:5px;" class="editMap_input"/></div>
+                               
+                                
+                                
+                               <input type="hidden" id="mapserialize"/>
+                                
+                                
+                                <div style="text-align:right; margin:20px; margin-right:100px;"><a href="javascript:updateOutput($('.dd').data('output', $('#mapserialize')));" class="basic_darkGreenBtn">Submit</a></div>
+                            </div>
+
+						</div>
+                    </div>
+                	<div class="clear"></div>
+                </div>
+                
+                </div>
+       
+            </div>
+            <div id="basic_generalBg">
+               <div id="basic_bg"><img src="../img/bg.png"/></div>
+               </div>
+            </center>
+        </div>
+    </div>
+    <div id="basic_bg"></div>
+     <script src="../plugin/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>

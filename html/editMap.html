@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="../css/basic.css" rel="stylesheet" />
+<link href="../css/teacherHome.css" rel="stylesheet" />
+<link href="../plugin/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
+<link href="../css/editMap.css" rel="stylesheet" type="text/css">
+<link href="../plugin/multiselect/css/multi-select.css" media="screen" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="../plugin/tag/jquery.tagsinput.min.js"></script>
+<script type="text/javascript" src="../plugin/flow/jquery.nestable.js"></script>
+<script type="text/javascript" src="../plugin/popup/jquery.bpopup.min.js"></script>
+<link href="../plugin/tag/jquery.tagsinput.css" rel="stylesheet"/>
+<script type="text/javascript" src="../plugin/multiselect/js/jquery.multi-select.js"></script>
+
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+
+<title>OpenCurriculum</title>
+</head>
+
+<body>
+<script>
+var addType=0;
+var addObj;
+function showEditPopup(){
+	$('#editMap_editPopup').bPopup({
+            fadeSpeed: 'slow', //can be a string ('slow'/'fast') or int
+            followSpeed: 1500, //can be a string ('slow'/'fast') or int
+            modalColor: '#B6DEC1'
+     });
+}
+function delSubTopic(obj){
+	if($(obj).parent().parent().parent().find("li").length==1){
+			$(obj).parent().parent().parent().find("button").remove();
+	}
+	$(obj).parent().parent().remove();
+}
+var contentSelcted;
+var liHtml1="<li class='dd-item' data-id='3'><div class='dd-handle editMap_moveBtn'></div>  <div class='editMap_content'>"
+var liHtml2="<img src='../img/icon_delete.png' width='20' class='editMap_addBtn' onclick='delSubTopic(this)' /><img src='../img/addIcon.png' width='20' class='editMap_addBtn' onclick='addSubTopic(this)' /><img src='../img/icon_edit.png' width='20' class='editMap_addBtn' onclick='showEditPopup()' /></div></li>";
+function addSubTopic(obj){
+	$("#addConceptTitle").val("");
+	addType=1;
+	addObj=obj;
+	$('#editMap_addPopup').bPopup({
+            fadeSpeed: 'slow', //can be a string ('slow'/'fast') or int
+            followSpeed: 1500, //can be a string ('slow'/'fast') or int
+            modalColor: '#B6DEC1'
+     });
+     
+	 
+}
+function addConcept(){
+	var obj=addObj;
+	if(addType==0){
+		$(obj).parent().append(liHtml1+$("#addConceptTitle").val()+liHtml2);
+	}
+	
+	 else if($(obj).parent().parent().find("button").length ==0){
+	 	$(obj).parent().parent().prepend("<button data-action='collapse' type='button'>Collapse</button><button data-action='expand' type='button' style='display: none;'>Expand</button>");
+		 $(obj).parent().parent().append("<ol class='dd-list'>"+liHtml1+$("#addConceptTitle").val()+liHtml2+"</ol>");
+		 
+	 }else{
+		 $(obj).parent().next().append(liHtml1+$("#addConceptTitle").val()+liHtml2);
+		 
+	}
+	$('#editMap_addPopup').bPopup().close();
+	}
+
+
+$(document).ready(function() {
+	 $('#maptags_input').tagsInput();
+	 $('#mapgroup_input').tagsInput({
+		 'defaultText':'add a group'
+		 });
+	 $('.dd').nestable({ /* config options */ 
+			maxDepth:10
+	 });
+	 $("#editMap_rootAdd").click(function () {
+		  $("#addConceptTitle").val("");
+		  addType=0;
+		  addObj=this;
+			$('#editMap_addPopup').bPopup({
+					fadeSpeed: 'slow', //can be a string ('slow'/'fast') or int
+					followSpeed: 1500, //can be a string ('slow'/'fast') or int
+					modalColor: '#B6DEC1'
+			 });
+	});
+	$('#assignedGroup').multiSelect({
+		selectableHeader: "<div >Unassigned</div>",
+  selectionHeader: "<div >Assigned</div>"
+		});
+	
+	
+	$( "#contentSelectable" ).selectable({
+		  selected: function( event, ui ) {
+				
+				contentSelcted=ui.selected.innerHTML;
+		}
+		});
+	
+ });
+</script>
+    <div id="basic_container">
+        <div id="basic_topContainer">
+        	<center>
+            	<div class="basic_middleWidth" id="basic_top_mainContainer">
+                	<div id="basic_topLogoDiv">
+                    	<a href="index.html"><img src="../img/logo.png" height="30"></a>
+                    </div>
+                    <div id="basic_topSearch">
+                    	<div class="SearchBox"><img src="../img/searchIcon.png" style="padding-top:3px; margin-left:-15px"/><input type="text" placeholder="Search"  style="border:0;
+	background-color:transparent;color:#457454; width:240px;"/></div>
+                    </div>
+                    <div id="basic_topAccount">
+                    <li style="padding-top:3px;">
+                    		<a href="SignOutSuccessful.html" class="signOut">Sign Out</a>
+                        </li>
+                    <li style="padding-top:3px">
+                        	Teacher
+                        </li>
+                    	<li>
+                    		<a href="TeacherProfile.html"><img src="../img/profile.jpg" height="20"/></a>
+                        </li>
+                        
+                        <li>
+                        </li>
+                    </div>
+                </div>
+            </center>
+        </div>
+        <div id="basic_middleContainer">
+        	<center>
+         	<div id="basic_spaceOccupy"></div>
+        	<div class="basic_middleWidth">
+           		<div class="basic_card">
+                <div class="teacherHome_statItem">
+                	<div class="teacherHome_statItem_left">
+                    	<li>
+                        	<img src="../img/icon_stat.png" height="25" width="25"/><div><a href="TeacherHome.html">Overview</a></div>
+                            
+                        </li>
+                        <li>
+                        	<img src="../img/icon_group.png" height="25" width="25"/><div><a href="TeacherGroup.html">Group</a></div>
+                            
+                        </li>
+                        <li class="teacherHome_statItem_left_selected">
+                        	<img src="../img/icon_content_hover.png" height="25" width="25"/><div><a href="TeacherCourse.html">Course</a></div>
+                            
+                        </li>
+                        <li>
+                        	<img src="../img/icon_profile.png" height="25" width="25"/><div><a href="TeacherProfile.html">Profile</a></div>
+                            
+                        </li>
+                        
+                     
+                    </div>
+                    <div class="teacherHome_statItem_right" id="teacherHome_rateStat">
+                    	<div>
+                        	<div class="mapEdit_Container">
+                                <h1>Create Course</h1>
+                               	<h2>Course Basic Information</h2>
+                                <h3>Course Name</h3>
+                                <div class="mapEdit_entry"><input type="text" placeholder="Course Name" value="
+Introduction to Earth" class="editMap_input"/></div>
+                                
+                                
+                                 <h3>Course Flow</h3>
+                                <div class="mapEdit_entry">
+                                
+                                
+                                	<div id="editMap_editPopup" class="editMap_popUp">
+                                        <span class="editMap_popUp_closeBtn b-close"><span>X</span></span>
+                                        <h1>Edit</h1>
+                                        <h3>Title</h3>
+                                        <div class="mapEdit_entry"><input type="text" placeholder="Title" class="editMap_input" style="width:80%"/></div>
+                                        <h3>Description</h3>
+                                        <div class="mapEdit_entry"><textarea class="editMap_input" style="padding-top:10px;height:50px; width:80%" placeholder="Description..."/></textarea></div>
+                                        <div style="float:right;margint-right:20px;margin-top:20px;"><a href="#" class="editMap_button  b-close">Done</a></div>
+                                    </div>
+                                    
+                                    
+                                    <div id="editMap_addPopup" class="editMap_popUp">
+                                        <span class="editMap_popUp_closeBtn b-close"><span>X</span></span>
+                                        <h1>Add</h1>
+                                        <div class="tabbable">
+                                        <ul class="nav nav-tabs">
+                                              <li class="active">
+                                                <a href="#tab1" data-toggle="tab">Add Concept</a>
+                                              </li>
+                                              <li><a href="#tab2" data-toggle="tab">Add Content</a></li>
+                                        </ul>
+                                        <div class="tab-content">
+                                            <div class="tab-pane active" id="tab1" style="overflow:hidden;">
+                                              <h3>Title</h3>
+                                                <div class="mapEdit_entry"><input type="text" placeholder="Title" class="editMap_input" style="width:80%" id="addConceptTitle"/></div>
+                                                <h3>Description</h3>
+                                                <div class="mapEdit_entry"><textarea class="editMap_input" style="padding-top:10px;height:50px; width:80%" placeholder="Description..."/></textarea></div>
+                                                <div style="float:right;margint-right:20px;margin-top:20px;"><a href="javascript:addConcept();" class="editMap_button">Done</a></div>
+                                            </div>
+                                            <div class="tab-pane" id="tab2">
+                                            	<div  class="form-search">
+                                                      <div class="input-append">
+                                                        <input type="text" class="span2 search-query">
+                                                        <button type="submit" class="btn">Search</button>
+                                                      </div>
+                                              </div>
+                                              <p>
+                                              	<ol id="contentSelectable">
+                                                      <li class="ui-widget-content">Item 1</li>
+                                                      <li class="ui-widget-content">Item 2</li>
+                                                      <li class="ui-widget-content">Item 3</li>
+                                                      <li class="ui-widget-content">Item 4</li>
+                                                      <li class="ui-widget-content">Item 5</li>
+                                                      <li class="ui-widget-content">Item 6</li>
+                                                      <li class="ui-widget-content">Item 7</li>
+                                                    </ol>
+                                               </p>
+                                               <div style="float:right;margint-right:20px;margin-top:20px;"><a href="#" class="editMap_button  b-close">Done</a></div>
+                                            </div>
+                                          </div>
+                                         </div>
+                                        
+                                    </div>
+                                    
+                                    
+                                	<div class="dd editMap_flow">
+                                    	<ol class="dd-list">
+                                        <img src="../img/addIcon.png" width="20" id="editMap_rootAdd">Add Concept
+                                          <div class="clear"></div>
+                                           
+                                        <li class="dd-item" data-id="3"><div class="dd-handle editMap_moveBtn"></div>  <div class="editMap_content">Earth Layers<img src="../img/icon_delete.png" width="20" class="editMap_addBtn" onclick="delSubTopic(this)"><img src="../img/addIcon.png" width="20" class="editMap_addBtn" onclick="addSubTopic(this)"><img src="../img/icon_edit.png" width="20" class="editMap_addBtn" onclick="showEditPopup()"></div></li><li class="dd-item" data-id="3"><div class="dd-handle editMap_moveBtn"></div>  <div class="editMap_content">Continents<img src="../img/icon_delete.png" width="20" class="editMap_addBtn" onclick="delSubTopic(this)"><img src="../img/addIcon.png" width="20" class="editMap_addBtn" onclick="addSubTopic(this)"><img src="../img/icon_edit.png" width="20" class="editMap_addBtn" onclick="showEditPopup()"></div><ol class="dd-list"><li class="dd-item" data-id="3"><div class="dd-handle editMap_moveBtn"></div>  <div class="editMap_content">Africa<img src="../img/icon_delete.png" width="20" class="editMap_addBtn" onclick="delSubTopic(this)"><img src="../img/addIcon.png" width="20" class="editMap_addBtn" onclick="addSubTopic(this)"><img src="../img/icon_edit.png" width="20" class="editMap_addBtn" onclick="showEditPopup()"></div></li><li class="dd-item" data-id="3"><div class="dd-handle editMap_moveBtn"></div>  <div class="editMap_content">Europe<img src="../img/icon_delete.png" width="20" class="editMap_addBtn" onclick="delSubTopic(this)"><img src="../img/addIcon.png" width="20" class="editMap_addBtn" onclick="addSubTopic(this)"><img src="../img/icon_edit.png" width="20" class="editMap_addBtn" onclick="showEditPopup()"></div></li><li class="dd-item" data-id="3"><div class="dd-handle editMap_moveBtn"></div>  <div class="editMap_content">Asia<img src="../img/icon_delete.png" width="20" class="editMap_addBtn" onclick="delSubTopic(this)"><img src="../img/addIcon.png" width="20" class="editMap_addBtn" onclick="addSubTopic(this)"><img src="../img/icon_edit.png" width="20" class="editMap_addBtn" onclick="showEditPopup()"></div></li><li class="dd-item" data-id="3"><div class="dd-handle editMap_moveBtn"></div>  <div class="editMap_content">America<img src="../img/icon_delete.png" width="20" class="editMap_addBtn" onclick="delSubTopic(this)"><img src="../img/addIcon.png" width="20" class="editMap_addBtn" onclick="addSubTopic(this)"><img src="../img/icon_edit.png" width="20" class="editMap_addBtn" onclick="showEditPopup()"></div></li><li class="dd-item" data-id="3"><div class="dd-handle editMap_moveBtn"></div>  <div class="editMap_content">Antarctica<img src="../img/icon_delete.png" width="20" class="editMap_addBtn" onclick="delSubTopic(this)"><img src="../img/addIcon.png" width="20" class="editMap_addBtn" onclick="addSubTopic(this)"><img src="../img/icon_edit.png" width="20" class="editMap_addBtn" onclick="showEditPopup()"></div></li><li class="dd-item" data-id="3"><div class="dd-handle editMap_moveBtn"></div>  <div class="editMap_content">Australia<img src="../img/icon_delete.png" width="20" class="editMap_addBtn" onclick="delSubTopic(this)"><img src="../img/addIcon.png" width="20" class="editMap_addBtn" onclick="addSubTopic(this)"><img src="../img/icon_edit.png" width="20" class="editMap_addBtn" onclick="showEditPopup()"></div></li></ol></li><li class="dd-item" data-id="3"><div class="dd-handle editMap_moveBtn"></div>  <div class="editMap_content">Ocean<img src="../img/icon_delete.png" width="20" class="editMap_addBtn" onclick="delSubTopic(this)"><img src="../img/addIcon.png" width="20" class="editMap_addBtn" onclick="addSubTopic(this)"><img src="../img/icon_edit.png" width="20" class="editMap_addBtn" onclick="showEditPopup()"></div></li></ol>
+                                    </div>
+                                   
+                                </div>
+                                
+                                
+                                 <h3>Assigned Group</h3>
+                                <div  class="mapEdit_entry">
+                                    <select multiple="multiple" id="assignedGroup" name="">
+                                          <option value='elem_1' selected>Class 201</option>
+                                          <option value='elem_2'>Class 201</option>
+                                          
+                                    </select>
+                                
+                                </div>
+                                
+                                <h2>Course Additional Information (Optional)</h2>
+                                <h3  data-toggle="collapse" data-target="#courseDescription" class="accordion-toggle expand">Course Description</h3>
+                                <div class="mapEdit_entry  collapse" id="courseDescription" ><textarea class="editMap_input" style="padding-top:10px;height:50px; width:80%;"  placeholder="Describe your course"/>Geology gives insight into the history of the Earth, as it provides the primary evidence for plate tectonics, the evolutionary history of life, and past climates. In modern times, geology is commercially important for mineral and hydrocarbon exploration and exploitation and for evaluating water resources.</textarea></div>
+                                <h3   data-toggle="collapse" data-target="#courseCategory" class="accordion-toggle expand">Course Category</h3>
+                                <div  class="mapEdit_entry  collapse" id="courseCategory"><select  class="mapEdit_select"><Option value="">Geology</Option><Option value="">Math</Option><Option value="">Physics</Option></select></div>
+                                <h3   data-toggle="collapse" data-target="#courseTags" class="accordion-toggle expand">Course Tag</h3>
+                                <div  class="mapEdit_entry  collapse" id="courseTags"><input name="tags" id="maptags_input" value="Geology, Earth"/></div>
+                                <h3    data-toggle="collapse" data-target="#courseThumbnail" class="accordion-toggle expand">Course Thumbnail</h3>
+                                <div class="mapEdit_entry  collapse"  id="courseThumbnail"><input type="file" style="padding:5px;" class="editMap_input"/></div>
+                               
+                                
+                                
+                               
+                                
+                                
+                                <div style="text-align:right; margin:20px; margin-right:100px;"><a href="TeacherCourse.html" class="basic_darkGreenBtn">Submit</a></div>
+                            </div>
+
+						</div>
+                    </div>
+                	<div class="clear"></div>
+                </div>
+                
+                </div>
+       
+            </div>
+            <div id="basic_generalBg">
+               <div id="basic_bg"><img src="../img/bg.png"/></div>
+               </div>
+            </center>
+        </div>
+    </div>
+    <div id="basic_bg"></div>
+     <script src="../plugin/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>

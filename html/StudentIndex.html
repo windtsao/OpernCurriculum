@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="../plugin/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
+<link href="../css/basic.css" rel="stylesheet" />
+<link href="../css/teacherHome.css" rel="stylesheet" />
+<link href="../css/overview.css" rel="stylesheet" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<title>OpenCurriculum</title>
+</head>
+
+<body>
+<!--
+<script>
+$(function () {
+        $('#teacherHome_rateStat').highcharts({
+			chart: {
+            	height: 320,
+            	type: 'line'
+        	},
+            title: {
+                text: 'Weekly Study Rates',
+                x: -20 //center
+            },
+           
+            xAxis: {
+                categories: ['Mon', 'Tue', 'Wen', 'Thu', 'Fri', 'Sat',
+                    'Sun']
+            },
+            yAxis: {
+                title: {
+                    text: 'Percentage (%)'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+            },
+            tooltip: {
+                valueSuffix: '%'
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle',
+                borderWidth: 0
+            },
+            series: [{
+                name: 'Geometry',
+                data: [12.3,15.6,15.7,15.7,15.7,23.0,31.2]
+            }, {
+                name: 'Geophysics',
+                data: [12.2,20.2,30.4,40.5,50.4,70.4,90.4]
+            }, {
+                name: 'Arithmetic',
+                data: [0,0,0,0,0,5.2,9.2]
+            }, {
+                name: 'Drama',
+                data: [0,0,10.2,15.3,17.2,20.3,30.2]
+            }]
+        });
+    });
+</script>-->
+    <div id="basic_container">
+        <div id="basic_topContainer">
+        	<center>
+            	<div class="basic_middleWidth" id="basic_top_mainContainer">
+                	<div id="basic_topLogoDiv">
+                    	<a href="index.html"><img src="../img/logo.png" height="30"></a>
+                    </div>
+                    <div id="basic_topSearch">
+                    	<div class="SearchBox"><img src="../img/searchIcon.png" style="padding-top:3px; margin-left:-15px"/><input type="text" placeholder="Search"  style="border:0;
+	background-color:transparent;color:#457454; width:240px;"/></div>
+                    </div>
+                    <div id="basic_topAccount">
+                    	<li style="padding-top:3px;">
+                    		<a href="SignOutSuccessful.html" class="signOut">Sign Out</a>
+                        </li>
+                        
+                    	<li>
+                    		<a href="StudentProfile.html"><img src="../img/profile.jpg" height="20"/></a>
+                        </li>
+                        <li style="padding-top:3px">
+                        	Student
+                        </li>
+                        <li>
+                        </li>
+                    </div>
+                </div>
+            </center>
+        </div>
+        <div id="basic_middleContainer">
+        	<center>
+         	<div id="basic_spaceOccupy"></div>
+        	<div class="basic_middleWidth">
+           		<div class="basic_card">
+                <div class="teacherHome_statItem">
+                	<div class="teacherHome_statItem_left">
+                    	<li class="teacherHome_statItem_left_selected">
+                        	<img src="../img/icon_stat_hover.png" height="25" width="25"/><div><a href="StudentIndex.html">Overview</a></div>
+                            
+                        </li>
+                        
+                        <li>
+                        	<img src="../img/icon_content.png" height="25" width="25"/><div><a href="Studentindexcourse.html">Course</a></div>
+                            
+                        </li>
+                        <li>
+                        	<img src="../img/icon_profile.png" height="25" width="25"/><div><a href="StudentProfile.html">Profile</a></div>
+                            
+                        </li>
+                        
+                     
+                    </div>
+                    <div class="teacherHome_statItem_right">
+                   <div class="overviewContainer ">
+                        	<div class="jumbotron overviewHeader">
+                    			<h1>Learning Overview</h1>
+                                <p style="color:#666">
+                              Groups<span class="badge">2</span>&nbsp;&nbsp;
+                              Courses<span class="badge">4</span>
+                              	
+                              </p>
+                            	
+                         	</div>
+                            
+                                <h3>Learning History</h3>
+                              
+                              	<div id="calendarView"><img src="../img/calendar.jpg" width="100%"></div>
+                           		<h3>Courses Falling Behind</h3>
+                                <div >
+                                
+                                    <ul class="thumbnails">
+                                      <li class="span4 overviewBehindItem">
+                                        <a href="#" class="thumbnail">
+                                        	<div class="courseThumbnail"  style="background:url(../img/courses/Geophysics.jpg);background-position:center;"></div>
+                                            <span>Introduction to Earth</span>
+                                            <p>
+                                                20% fall behind
+                                            </p>
+                                        </a>
+                                    
+                                      </li>
+                                      
+                                      
+                                      <li class="span4 overviewBehindItem">
+                                        <a href="#" class="thumbnail">
+                                        	<div class="courseThumbnail"  style="background:url(../img/courses/astronomy.jpeg);background-position:center;"></div>
+                                            <span>Introduction to Space</span>
+                                            <p>
+                                                10% fall behind
+                                            </p>
+                                        </a>
+                                    
+                                      </li>
+                                      
+                                      
+                                      
+                                      <li class="span4 overviewBehindItem">
+                                        <a href="#" class="thumbnail">
+                                        	<div class="courseThumbnail"  style="background:url(../img/courses/sun.jpeg);background-position:center;"></div>
+                                            <span>Sun Introduction</span>
+                                            <p> 
+                                                30% fall behind
+                                            </p>
+                                        </a>
+                                    
+                                      </li>
+                                      
+                                      
+                                      <li class="span4 overviewBehindItem">
+                                        <a href="#" class="thumbnail">
+                                        	<div class="courseThumbnail" style="background:url(../img/courses/vocalno.jpeg);background-position:center;"></div>
+                                            <span>Geology Disaster</span>
+                                            <p> 
+                                                30% fall behind
+                                            </p>
+                                        </a>
+                                    
+                                      </li>
+                                     
+                                    </ul>
+                                    
+                                    <div class="clear"></div>
+                                </div>
+                         </div>
+                    
+                        
+                    </div>
+                	<div class="clear"></div>
+                </div>
+                
+                </div>
+       
+            </div>
+            
+            <div id="basic_generalBg">
+               <div id="basic_bg"><img src="../img/bg.png"/></div>
+               </div>
+            </center>
+        </div>
+        
+  
+    	
+
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <link href="../plugin/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
+<link href="../css/basic.css" rel="stylesheet" />
+<link href="../css/teacherHome.css" rel="stylesheet" />
+<link href="../css/group.css" rel="stylesheet" />
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+
+
+<title>OpenCurriculum</title>
+</head>
+
+<body>
+<script LANGUAGE="javascript">
+function deleteGroup(){
+$('#deleteConfirm').modal();
+}
+　　</script>
+    <div id="basic_container">
+        <div id="basic_topContainer">
+        	<center>
+            	<div class="basic_middleWidth" id="basic_top_mainContainer">
+                	<div id="basic_topLogoDiv">
+                    	<a href="index.html"><img src="../img/logo.png" height="30"></a>
+                    </div>
+                    <div id="basic_topSearch">
+                    	<div class="SearchBox"><img src="../img/searchIcon.png" style="padding-top:3px; margin-left:-15px"/><input type="text" placeholder="Search"  style="border:0;
+	background-color:transparent;color:#457454; width:240px;"/></div>
+                    </div>
+                    <div id="basic_topAccount">
+                    <li style="padding-top:3px;">
+                    		<a href="SignOutSuccessful.html" class="signOut">Sign Out</a>
+                        </li>
+                    <li style="padding-top:3px">
+                        	Teacher
+                        </li>
+                    	<li>
+                    		<a href="TeacherProfile.html"><img src="../img/profile.jpg" height="20"/></a>
+                        </li>
+                        
+                        <li>
+                        </li>
+                    </div>
+                </div>
+            </center>
+        </div>
+        <div id="basic_middleContainer">
+        	<center>
+         	<div id="basic_spaceOccupy"></div>
+        	<div class="basic_middleWidth">
+           		<div class="basic_card">
+                <div class="teacherHome_statItem">
+                	<div class="teacherHome_statItem_left">
+                    	<li>
+                        	<img src="../img/icon_stat.png" height="25" width="25"/><div><a href="TeacherHome.html">Overview</a></div>
+                            
+                        </li>
+                        <li class="teacherHome_statItem_left_selected">
+                        	<img src="../img/icon_group_hover.png" height="25" width="25"/><div><a href="TeacherGroup.html">Group</a></div>
+                            
+                        </li>
+                        <li>
+                        	<img src="../img/icon_content.png" height="25" width="25"/><div><a href="TeacherCourse.html">Course</a></div>
+                            
+                        </li>
+                        <li>
+                        	<img src="../img/icon_profile.png" height="25" width="25"/><div><a href="TeacherProfile.html">Profile</a></div>
+                            
+                        </li>
+                        
+                     
+                    </div>
+                      <div class="teacherHome_statItem_right" id="teacherHome_rateStat">
+                      
+                      <div style="padding:20px; text-align:left;">
+                      <div class="jumbotron" style="height:120px;">
+                              <h1 style="color:#666;font-weight:normal;">My Groups</h1>
+                              <p style="color:#666">
+                              Groups<span class="badge">2</span>&nbsp;&nbsp;
+                              Students<span class="badge">20</span>
+                              	
+                              </p>
+                              
+                            </div>
+                      		<div style="text-align:right;margin-bottom:20px;"><a href="createGroup.html" class="basic_darkGreenBtn">New Group</a></div>
+                            <table class="table table-hover">
+                            	
+                                
+                                <tr>
+                                	<td width="25%">Class 201</td>
+                                    <td width="60%" class="groupStudentlist">Tom,
+                    Jack,
+                    Edward,
+                    Jerry,
+                    Marry,
+                    Jackman,
+                    Albert,
+                    Alvin,
+                    Black,
+                    Curt,
+                    Clive,
+                    Paul</td>
+                                    <td><a href="../html/EditGroup.html"><img src="../img/icon_edit.png" width="20"/></a>&nbsp;&nbsp;<a href="javascript:deleteGroup();"><img src="../img/icon_delete.png"  width="20"/></a></td>
+                                    
+                                </tr>
+                                <tr>
+                                	<td>Class 202</td>
+                                    <td  class="groupStudentlist">
+                                    Peter,
+                    Ralph,
+                    Ryan,
+                    Roy,
+                    Justin,
+                    Kelvin,
+                    Frank,
+                    Gale
+                                    
+                                    </td>
+                                    <td><a href="../html/EditGroup.html"><img src="../img/icon_edit.png" width="20"/></a>&nbsp;&nbsp;<a href="#"><img src="../img/icon_delete.png"  width="20"/></a></td>
+                                    
+                                </tr>
+                                
+                               
+                                </tr>
+							</table>
+                            </div>
+                            
+<div class="modal hide fade" id="deleteConfirm">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h3>Delete Group</h3>
+  </div>
+  <div class="modal-body">
+    <p>Are you sure to delete this group</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn">Close</a>
+    <a href="#" class="btn btn-primary">Delete</a>
+  </div>
+</div>
+                            
+                            
+                      </div>
+                	<div class="clear"></div>
+                </div>
+                
+                </div>
+       
+            </div>
+            <div id="basic_generalBg">
+               <div id="basic_bg"><img src="../img/bg.png"/></div>
+               </div>
+            </center>
+        </div>
+    </div>
+    <div id="basic_bg"></div>
+    <script src="../plugin/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>

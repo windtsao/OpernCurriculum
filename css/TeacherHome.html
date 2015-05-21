@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="../css/basic.css" rel="stylesheet" />
+<link href="../css/teacherHome.css" rel="stylesheet" />
+<link href="../css/StudentHome.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+<script>
+</script>
+<script>
+$(function () {
+        $('#teacherHome_rateStat').highcharts({
+			chart: {
+            	height: 320,
+            	type: 'line'
+        	},
+            title: {
+                text: 'Weekly Study Rates',
+                x: -20 //center
+            },
+           
+            xAxis: {
+                categories: ['Mon', 'Tue', 'Wen', 'Thu', 'Fri', 'Sat',
+                    'Sun']
+            },
+            yAxis: {
+                title: {
+                    text: 'Percentage (%)'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+            },
+            tooltip: {
+                valueSuffix: '%'
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle',
+                borderWidth: 0
+            },
+            series: [{
+                name: 'Geometry',
+                data: [12.3,15.6,15.7,15.7,15.7,23.0,31.2]
+            }, {
+                name: 'Geophysics',
+                data: [12.2,20.2,30.4,40.5,50.4,70.4,90.4]
+            }, {
+                name: 'Arithmetic',
+                data: [0,0,0,0,0,5.2,9.2]
+            }, {
+                name: 'Drama',
+                data: [0,0,10.2,15.3,17.2,20.3,30.2]
+            }]
+        });
+    });
+</script>
+<title>OpenCurriculum</title>
+</head>
+
+<body>
+    <div id="basic_container">
+        <div id="basic_topContainer">
+        	<center>
+            	<div class="basic_middleWidth" id="basic_top_mainContainer">
+                	<div id="basic_topLogoDiv">
+                    	<img src="../img/logo.png" height="30">
+                    </div>
+                    <div id="basic_topSearch">
+                    	<input type="text" value="Search" />
+                    </div>
+                    <div id="basic_topAccount">
+                    	<li style="padding-top:3px">
+                        	Teacher
+                        </li>
+                    	<li>
+                    		<img src="../img/profile.jpg" height="20"/>
+                        </li>
+                        <li>
+                        </li>
+                    </div>
+                </div>
+            </center>
+        </div>
+        <div id="basic_middleContainer">
+        	<center>
+         	<div id="basic_spaceOccupy"></div>
+        	<div class="basic_middleWidth">
+           		<div class="basic_card">
+                <div class="teacherHome_statItem">
+                	<div class="teacherHome_statItem_left">
+                    	<li class="teacherHome_statItem_left_selected">
+                        	<img src="../img/icon_stat_hover.png" height="25" width="25"/><div>Overview</div>
+                            
+                        </li>
+                        <li>
+                        	<img src="../img/icon_group.png" height="25" width="25"/><div>Group</div>
+                            
+                        </li>
+                        <li>
+                        	<img src="../img/icon_content.png" height="25" width="25"/><div>Course</div>
+                            
+                        </li>
+                        <li>
+                        	<img src="../img/icon_profile.png" height="25" width="25"/><div>Profile</div>
+                            
+                        </li>
+                        
+                     
+                    </div>
+                    <div class="teacherHome_statItem_right">
+                    	<li class="teacherHome_statItem_item" id="firstLi">
+                        	<div class="teacherHome_statItem_h1">My Learning Rate</div>
+                            <div id="teacherHome_rateStat"></div>
+                        </li>
+                        <!--<li class="teacherHome_statItem_item">
+                        	<div class="teacherHome_statItem_h1">Student Progress</div>
+                        </li>-->
+                        <li class="teacherHome_statItem_item">
+                        	<div class="teacherHome_statItem_h1">My Recent Learnings</div>
+                           <!-- <div class="historyTable" >
+                <table >
+                    <tr>
+                        <td>
+                            Course
+                        </td>
+                        <td >
+                            Last learning content
+                        </td>
+                        <td>
+                            Last learning time
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >
+                            Geometry
+                        </td>
+                        <td>
+                            Triangle Basics
+                        </td>
+                        <td>
+                            continue
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >
+                            Row 2
+                        </td>
+                        <td>
+                            Row 2
+                        </td>
+                        <td>
+                            Row 2
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >
+                            Row 2
+                        </td>
+                        <td>
+                            Row 2
+                        </td>
+                        <td>
+                            Row 2
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >
+                            Row 3
+                        </td>
+                        <td>
+                            Row 3
+                        </td>
+                        <td>
+                            Row 3
+                        </td>
+                    </tr>
+                </table>
+            </div>-->
+ <div class="course"><a class="courseLink" href="">Geometry</a><img class="imgCourse" onClick="index.html" src="../img/courses/geometry.jpg" title="Geometry"/></br><div class="hitoryRightDiv"><span>Last Learning Date: July 13</span></br><span>Last Learning Content: </br><a href="#" class="historyLink">Triangle Basics</a></span></br><div class="historyProgressDiv"><span>Progress:&nbsp;</span><progress id='p' max='100' value='30'></progress><span>30%</span></div>
+ </div>
+ </div>
+ <div class="course"><a class="courseLink" href="">Geophysics</a><img class="imgCourse" onClick="index.html" src="../img/courses/Geophysics.jpg" title="Geophysics"/></br><div class="hitoryRightDiv"><span>Last Learning Date: June 13</span></br><span>Last Learning Content: </br><a href="#" class="historyLink">Earth's Shape</a></span></br><div class="historyProgressDiv"><span>Progress:&nbsp;</span><progress id='p' max='100' value='92'></progress><span>92%</span></div>
+ </div>
+ </div>             
+                        </li>
+                        <li class="teacherHome_statItem_item">
+                        	<div class="teacherHome_statItem_h1">My Learning History</div>
+                        <div class="historyDiv"><p>I have finished 9 contents last week</p><p>Ahead of 90% students in OpenCurriculum</p></div>
+                        
+                        </li>
+                        
+                    </div>
+                	<div class="clear"></div>
+                </div>
+                
+                </div>
+       
+            </div>
+            
+            <div id="basic_generalBg">
+               <div id="basic_bg"><img src="../img/bg.png"/></div>
+               </div>
+            </center>
+        </div>
+        
+  
+    	
+
+    </div>
+    
+</body>
+</html>

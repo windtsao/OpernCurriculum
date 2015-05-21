@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="../css/bootstrap2.css" rel="stylesheet" media="screen">
+<link href="../css/basic.css" rel="stylesheet" />
+<link href="../css/teacherHome.css" rel="stylesheet" />
+<link href="../css/overview.css" rel="stylesheet" />
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+
+<title>OpenCurriculum</title>
+</head>
+
+<body>
+<!--<script src="http://d3js.org/d3.v3.min.js"></script>-->
+<script>
+
+$(function () {
+        $('#fallingBehindContainer1').highcharts({
+            chart: {
+                type: 'column',
+                margin: [ 50, 50, 100, 80]
+            },
+            title: {
+                text: 'Geololgy Grade-1 Fall2013'
+            },
+            xAxis: {
+                categories: [
+                    'Tom',
+                    'Jack',
+                    'Edward',
+                    'Jerry',
+                    'Marry',
+                    'Jackman',
+                    'Albert',
+                    'Alvin',
+                    'Black',
+                    'Curt',
+                    'Clive',
+                    'Paul',
+                    'Peter',
+                    'Ralph',
+                    'Ryan',
+                    'Roy',
+                    'Justin',
+                    'Kelvin',
+                    'Frank',
+                    'Gale'
+                ],
+                labels: {
+                    rotation: -45,
+                    align: 'right',
+                    style: {
+                        fontSize: '12px',
+                        fontFamily: 'Verdana, sans-serif'
+                    }
+                }
+            },
+            yAxis: {
+                min: 0,
+				max:100,
+                title: {
+                    text: 'Percentage(Finished)'
+                },
+				
+				
+				plotLines : [{
+					value : 19,
+					color : 'green',
+					dashStyle : 'shortdash',
+					width : 2,
+					label : {
+						text : 'Average'
+					}
+				}]
+				
+				
+				
+            },
+            legend: {
+                enabled: false
+            },
+            tooltip: {
+                formatter: function() {
+                    return '<b>'+ this.x +'</b><br/>'+
+                        'Finished '+ Highcharts.numberFormat(this.y, 1) +
+                        '%';
+                }
+            },
+            series: [{
+                name: 'Percentage',
+                data: [4.4, 21.8, 20.1, 20, 19.6, 19.5, 19.1, 38.4, 18,
+                    17.3, 16.8, 15, 14.7, 24.5, 13.3, 32.8, 22.4, 41.8,
+                    11.7, 21.2],
+                dataLabels: {
+                    enabled: true,
+                    rotation: -90,
+                    color: '#FFFFFF',
+                    align: 'right',
+                    x: 4,
+                    y: 10,
+                    style: {
+                        fontSize: '13px',
+                        fontFamily: 'Verdana, sans-serif'
+                    }
+                }
+            }]
+        });
+		
+		$('#fallingBehindContainer2').highcharts({
+            chart: {
+                type: 'column',
+                margin: [ 50, 50, 100, 80]
+            },
+            title: {
+                text: 'Geololgy Grade-2 Fall2013'
+            },
+            xAxis: {
+                categories: [
+                    'Tom',
+                    'Jack',
+                    'Edward',
+                    'Jerry',
+                    'Marry',
+                    'Jackman',
+                    'Albert',
+                    'Alvin',
+                    'Black',
+                    'Curt',
+                    'Clive',
+                    'Paul',
+                    'Peter',
+                    'Ralph',
+                    'Ryan',
+                    'Roy',
+                    'Justin',
+                    'Kelvin',
+                    'Frank',
+                    'Gale'
+                ],
+                labels: {
+                    rotation: -45,
+                    align: 'right',
+                    style: {
+                        fontSize: '12px',
+                        fontFamily: 'Verdana, sans-serif'
+                    }
+                }
+            },
+            yAxis: {
+                min: 0,
+				max:100,
+                title: {
+                    text: 'Percentage(Finished)'
+                },
+				
+				
+				plotLines : [{
+					value : 40,
+					color : 'green',
+					dashStyle : 'shortdash',
+					width : 2,
+					label : {
+						text : 'Average'
+					}
+				}]
+				
+				
+				
+            },
+            legend: {
+                enabled: false
+            },
+            tooltip: {
+                formatter: function() {
+                    return '<b>'+ this.x +'</b><br/>'+
+                        'Finished '+ Highcharts.numberFormat(this.y, 1) +
+                        '%';
+                }
+            },
+            series: [{
+                name: 'Percentage',
+                data: [32.4, 21.8, 60.1, 20, 39.6, 19.5, 19.1, 18.4, 78,
+                    37.3, 26.8, 15, 34.7, 84.5, 13.3, 42.8, 12.4, 81.8,
+                    51.7, 11.2],
+                dataLabels: {
+                    enabled: true,
+                    rotation: -90,
+                    color: '#FFFFFF',
+                    align: 'right',
+                    x: 4,
+                    y: 10,
+                    style: {
+                        fontSize: '13px',
+                        fontFamily: 'Verdana, sans-serif'
+                    }
+                }
+            }]
+        });
+		
+    });
+/*
+var width = 600,
+    height = 136,
+    cellSize = 10; // cell size
+
+var day = d3.time.format("%w"),
+    week = d3.time.format("%U"),
+    percent = d3.format(".1%"),
+    format = d3.time.format("%Y-%m-%d");
+
+var color = d3.scale.quantize()
+    .domain([-.05, .05])
+    .range(d3.range(11).map(function(d) { return "q" + d + "-11"; }));
+
+var svg = d3.select("#calendarView").selectAll("svg")
+    .data(d3.range(2010, 2010))
+  .enter().append("svg")
+    .attr("width", width)
+    .attr("height", height)
+    .attr("class", "RdYlGn")
+  .append("g")
+    .attr("transform", "translate(" + ((width - cellSize * 53) / 2) + "," + (height - cellSize * 7 - 1) + ")");
+
+svg.append("text")
+    .attr("transform", "translate(-6," + cellSize * 3.5 + ")rotate(-90)")
+    .style("text-anchor", "middle")
+    .text(function(d) { return d; });
+
+var rect = svg.selectAll(".day")
+    .data(function(d) { return d3.time.days(new Date(d, 0, 1), new Date(d + 1, 0, 1)); })
+  .enter().append("rect")
+    .attr("class", "day")
+    .attr("width", cellSize)
+    .attr("height", cellSize)
+    .attr("x", function(d) { return week(d) * cellSize; })
+    .attr("y", function(d) { return day(d) * cellSize; })
+    .datum(format);
+
+rect.append("title")
+    .text(function(d) { return d; });
+
+svg.selectAll(".month")
+    .data(function(d) { return d3.time.months(new Date(d, 0, 1), new Date(d + 1, 0, 1)); })
+  .enter().append("path")
+    .attr("class", "month")
+    .attr("d", monthPath);
+
+d3.csv("http://bl.ocks.org/mbostock/raw/4063318/dji.csv", function(error, csv) {
+  var data = d3.nest()
+    .key(function(d) { return d.Date; })
+    .rollup(function(d) { return (d[0].Close - d[0].Open) / d[0].Open; })
+    .map(csv);
+
+  rect.filter(function(d) { return d in data; })
+      .attr("class", function(d) { return "day " + color(data[d]); })
+    .select("title")
+      .text(function(d) { return d + ": " + percent(data[d]); });
+});
+
+function monthPath(t0) {
+  var t1 = new Date(t0.getFullYear(), t0.getMonth() + 1, 0),
+      d0 = +day(t0), w0 = +week(t0),
+      d1 = +day(t1), w1 = +week(t1);
+  return "M" + (w0 + 1) * cellSize + "," + d0 * cellSize
+      + "H" + w0 * cellSize + "V" + 7 * cellSize
+      + "H" + w1 * cellSize + "V" + (d1 + 1) * cellSize
+      + "H" + (w1 + 1) * cellSize + "V" + 0
+      + "H" + (w0 + 1) * cellSize + "Z";
+}
+
+d3.select(self.frameElement).style("height", "2910px");
+*/
+</script>
+    <div id="basic_container">
+        <div id="basic_topContainer">
+        	<center>
+            	<div class="basic_middleWidth" id="basic_top_mainContainer">
+                	<div id="basic_topLogoDiv">
+                    	<a href="index.html"><img src="../img/logo.png" height="30"></a>
+                    </div>
+                    <div id="basic_topSearch">
+                    	<form method="get" action="/search" id="search">
+  <input name="q" type="text" size="40" placeholder="Search..." />
+</form>
+                    </div>
+                    <div id="basic_topAccount">
+                    	<li style="padding-top:3px;">
+                    		<a href="SignOutSuccessful.html" class="signOut">Sign Out</a>
+                        </li>
+                        <li>
+                    		<a href="TeacherProfile.html"><img src="../img/profile.jpg" height="20"/></a>
+                        </li>
+                        <li style="padding-top:3px">
+                        	Teacher
+                        </li>                   	
+                        <li>
+                        </li>
+                    </div>
+                </div>
+            </center>
+        </div>
+        <div id="basic_middleContainer">
+        	<center>
+         	<div id="basic_spaceOccupy"></div>
+        	<div class="basic_middleWidth">
+           		<div class="basic_card">
+                <div class="teacherHome_statItem">
+                	<div class="teacherHome_statItem_left">
+                    
+                    	<li class="teacherHome_statItem_left_selected">
+                        	<img src="../img/icon_stat_hover.png" height="25" width="25"/><div><a href="TeacherHome.html">Overview</a></div>
+                            
+                        </li>
+                        <li>
+                        	<img src="../img/icon_group.png" height="25" width="25"/><div><a href="TeacherGroup.html">Group</a></div>
+                           <span class="badge">2</span> 
+                        </li>
+                        <li>
+                        	<img src="../img/icon_content.png" height="25" width="25"/><div><a href="TeacherCourse.html">Course</a></div>
+                           <span class="badge">4</span> 
+                        </li>
+                        <li>
+                        	<img src="../img/icon_profile.png" height="25" width="25"/><div><a href="TeacherProfile.html">Profile</a></div>
+                            
+                        </li>
+                        
+                     
+                    </div>
+                    <div class="teacherHome_statItem_right"  id="teacherHome_rateStat">
+                    	<div class="overviewContainer ">
+                        	<div>
+                    			<h2>Overview</h2>
+                               <!-- <ul class="nav nav-pills">
+        <li><a href="#">Groups<span class="badge">2</span></a></li>
+        <li><a href="#">Courses<span class="badge">4</span></a></li>
+      
+      </ul>-->
+                                                 <!--       <p style="color:#666">
+                                  Groups<span class="badge">2</span>&nbsp;&nbsp;
+                                  Courses<span class="badge">4</span>-->
+                              	
+                              </p>
+                            	
+                         	</div>
+                            
+                            <ul class="nav nav-tabs">
+                                      <li class="active"><a href="#">Private Courses <span class="badge">4</span></a></li>
+                                      <li><a href="#">Public Courses <span class="badge">0</span></a></li>
+                           		 </ul>
+                            
+                            
+                            <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title">View History</h3>
+        </div>
+        
+      
+                               
+                              
+                              	<div id="calendarView"><img src="../img/calendar.jpg" width="100%"></div>
+                                
+                                </div>	
+                           		
+                                
+                               <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title">Students Progress Overview</h3>
+        </div>
+        
+      
+                               
+                              
+                                 <div id="fallingBehindContainer1"></div>
+                                <div id="fallingBehindContainer2"></div>
+                                <div id="fallingBehindContainer3"></div>
+                                </div>	
+                             
+                                
+                                
+                         </div>
+                    
+                    	</div>
+                            
+                        <div class="clear"></div>
+                    </div>
+                	
+                </div>
+                
+                </div>
+       
+            
+            
+            <div id="basic_generalBg">
+               <div id="basic_bg"><img src="../img/bg.png"/></div>
+               </div>
+            </center>
+        </div>
+        
+  
+    	
+
+    </div>
+    <script src="../plugin/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>

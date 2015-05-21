@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="../css/master.css" rel="stylesheet" type="text/css" />
+<link href="../css/basic.css" rel="stylesheet" />
+<link href="../css/teacherHome.css" rel="stylesheet" />
+<link href="../css/index.css" rel="stylesheet" />
+<link href="../plugin/bootstrap/css/bootstrap.css"/>
+<link href="../plugin/Xeditable/css/bootstrap-editable.css"/>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="../plugin/bootstrap/js/bootstrap.js"></script>
+<script src="../plugin/Xeditable/js/jqueryui-editable.js"></script>
+<script>
+$(document).ready(function() {
+    $('.editable').editable();
+});
+</script>
+
+
+<body>
+
+<a href="#" id="lastname" data-type="text"  data-title="Enter lastname" class="editable editable-click">Barry</a>
+</body>
+</html>
